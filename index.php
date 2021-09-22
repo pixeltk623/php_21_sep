@@ -13,8 +13,8 @@
 	This is Kumar -->
 	<!-- This is Kumar
 	This is Kumar
-	This is Kumar 
-	
+	This is Kumar
+
 	1. Block Level Elements (h, p, div)
 	2. Inline Level Elements (span, a, img. input)
 	-->
@@ -30,7 +30,7 @@
 	<h3>This is HTML</h3>
 	<h4>This is HTML</h4>
 	<h5>This is HTML</h5>
-	<h6>This is HTML</h6> -->	
+	<h6>This is HTML</h6> -->
 
 <!-- 	<center><span>This is Span</span></center> -->
 
