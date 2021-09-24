@@ -6,7 +6,56 @@
 	<script type="text/javascript"></script>
 	<link rel="stylesheet" type="text/css" href="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style type="text/css">
+		ul {
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+			overflow: hidden;
+			background-color: black;
+		}
 
+		ul li {
+			float: left;
+		}
+
+		ul li a {
+			color: white;
+			text-decoration: none;
+			display: inline-block;
+			/*padding: 15px 20px;*/
+			padding: 20px 10px 20px 20px;
+			font-size: 20px;
+		}
+
+		ul li a:hover {
+			background-color: grey;
+		}
+
+		.active {
+			background-color: grey;
+		}
+
+		.right {
+			float: right;
+		}
+
+		@media screen and (min-width: 320px) and (max-width: 480px){	
+    		/*body {
+    			background-color: red;
+    		}*/
+
+    		ul li {
+    			float: none;
+    			text-align: center;
+    		}
+
+    		.right {
+				float: none;
+			}
+		}	
+
+	</style>
 </head>
 <body>
 <!-- 	This is Kumar
@@ -36,11 +85,19 @@
 
 	<center><h1>Chennai Super Kings</h1></center>
 
-	<a href="index.php">Home</a>
+	<ul>
+		<li class="active"><a href="index.php">Home</a></li>
+		<li><a href="about.php">About</a></li>
+		<li><a href="service.php">Service</a></li>
+		<li><a href="blog.php">Blog</a></li>
+		<li class="right"><a href="contact.php">Contact</a></li>
+	</ul>
+
+	<!-- <a href="index.php">Home</a>
 	<a href="about.php">About</a>
 	<a href="service.php">Service</a>
 	<a href="blog.php">Blog</a>
-	<a href="contact.php">Contact</a>
+	<a href="contact.php">Contact</a> -->
 	<br>
 <!-- 	<img src="https://bsmedia.business-standard.com/_media/bs/img/article/2021-09/19/full/1632064806-3548.jpg"> -->
 	<img src="images/csk.jpg" alt="M S Six" width="100%" height="">
