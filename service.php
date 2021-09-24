@@ -5,6 +5,37 @@
 	<style type="text/css"></style>
 	<script type="text/javascript"></script>
 	<link rel="stylesheet" type="text/css" href="">
+	<style type="text/css">
+		ul {
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+			overflow: hidden;
+			background-color: black;
+		}
+
+		ul li {
+			float: left;
+		}
+
+		ul li a {
+			color: white;
+			text-decoration: none;
+			display: inline-block;
+			/*padding: 15px 20px;*/
+			padding: 20px 10px 20px 20px;
+			font-size: 20px;
+		}
+
+		ul li a:hover {
+			background-color: grey;
+		}
+
+		.active {
+			background-color: grey;
+		}
+
+	</style>
 </head>
 <body>
 <!-- 	This is Kumar
@@ -34,11 +65,13 @@
 
 	<center><h1>Chennai Super Kings</h1></center>
 
-	<a href="index.php">Home</a>
-	<a href="about.php">About</a>
-	<a href="service.php">Service</a>
-	<a href="blog.php">Blog</a>
-	<a href="contact.php">Contact</a>
+	<ul>
+		<li class="active"><a href="index.php">Home</a></li>
+		<li><a href="about.php">About</a></li>
+		<li><a href="service.php">Service</a></li>
+		<li><a href="blog.php">Blog</a></li>
+		<li style="float: right;"><a href="contact.php">Contact</a></li>
+	</ul>
 	<hr>
 
 	<p><b>The Chennai Super Kings (CSK) </b>is a franchise cricket team based in Chennai, Tamil Nadu. They play in the Indian Premier League (IPL). Founded in 2008, the team plays its home matches at the M. A. Chidambaram Stadium in Chennai. The team is owned by Chennai Super Kings Cricket Ltd and India Cements is the major stakeholder. The team served a two-year suspension from the IPL starting July 2015 due to the involvement of their owners in the 2013 IPL betting case,[2] and won the title in its comeback season of 2018. The team is captained by <strong>Mahendra Singh Dhoni</strong> and coached by Stephen Fleming.</p>
