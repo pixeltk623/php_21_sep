@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table tr td {
+            text-align: center;
+            border: 2px solid black;
+        }
+
+        .section1 {
+            padding: 39px 0;
+        }
+
+        div {
+            display: flex;
+            justify-content: center;
+        }
+        table tr td ul li{
+			list-style-type: none;
+            float: right;
+            margin: 10px;
+        }
+        table tr td ul{
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+        .header, .navbar{
+            background-color: greenyellow;
+        }
+        .section1{
+            background-color: lightsalmon;
+        }
+        .footer{
+            background-color: greenyellow;
+
+        }
+     
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <table width="30%" style="border-collapse: collapse;">
+            <tr>
+                <td class="header" colspan="6">
+                    header
+                </td>
+            </tr>
+            <tr class="navbar">
+                <td colspan="6">
+                    <ul>
+                        <li><a href="">Contact</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="">Home</a></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="section1" colspan="4">section <br>fjhsdjfhjsdghjsdjfhsjkdfhsgdfhjgdsfh <br> jsdhfjshdfjhdjkfhsjdhfjhsdfjhsjkdfhj
+                </td>
+                <td class="section1" colspan="2">aside</td>
+            </tr>
+            <!-- <tr>
+                <td class="section1" colspan="1">article</td>
+            </tr> -->
+            <tr>
+                <td class="footer" colspan="6">footer</td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>
