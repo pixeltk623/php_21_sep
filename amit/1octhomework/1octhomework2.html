@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(to right, #12c2e9, #c471ed, #f64f59);
+
+        }
+
+        .rowmain2 {
+            background: white;
+            margin: 8% auto;
+            height: 540px;
+            width: 71%;
+            padding: 5% 10% 10% 12%;
+
+        }
+
+        label,
+        input {
+            padding: 6px 6px 6px 0;
+            width: 97%;
+        }
+
+        .col1,
+        .col2 {
+            float: left;
+            width: 49%;
+            margin-top: 30px;
+        }
+
+        .message {
+            width: 105%;
+            padding-top: 30px;
+            clear: both;
+        }
+
+        input {
+            outline: 0;
+            border-width: 0 0 2px;
+            border-color: lightgrey;
+            width: 88%;
+        }
+
+        input:focus {
+            border-color: #12c2e9;
+        }
+
+        .heading {
+            margin-bottom: 30px;
+            text-align: center;
+            margin-right: 80px;
+            font-size: 30px;
+            font-weight: 500;
+        }
+
+        button {
+            clear: both;
+            margin: 30px 0 0 0;
+            height: 54px;
+            width: 191px;
+            background: linear-gradient(to right, #12c2e9, #c471ed, #f64f59);
+            border: none;
+            border-radius: 3px;
+            font-size: 23px;
+            color: white;
+        }
+        button:hover{
+            background: linear-gradient(to right, #09cffb, #a925eb, #e93743);
+        }
+
+        .heading h3 {
+            text-decoration-color: linear-gradient(to right, #12c2e9, #c471ed, #f64f59);
+        }
+
+        @media screen and (max-width: 965px) {
+            .heading {
+                /* float: left; */
+                margin: 0;
+                padding: 0;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .rowmain2 {
+                height: 700px;
+                width: 90%;
+            }
+
+            .col1,
+            .col2 {
+                clear: both;
+                width: 110%;
+            }
+
+            .message {
+                width: 110%;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="rowmain1">
+        <div class="rowmain2">
+            <div class="heading">
+                <h3>
+                    Responsive Contact us Form
+                </h3>
+
+            </div>
+
+            <div class="row">
+                <div class="col1">
+                    <label for="">First Name</label>
+                    <input type="text">
+                </div>
+                <div class="col2">
+                    <label for="">Last Name</label>
+                    <input type="text">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col1">
+                    <label for="">Email Address</label>
+                    <input type="email">
+                </div>
+                <div class="col2">
+                    <label for="">Website Name</label>
+                    <input type="text">
+                </div>
+            </div>
+            <div class="row">
+                <div class="message">
+                    <label for="">Write your message</label>
+                    <input type="text">
+                </div>
+            </div>
+            <div class="button">
+                <button>SUBMIT</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
