@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+
+        }
+
+        body {
+            background: url('https://i.imgur.com/kk76J5I.jpg') no-repeat;
+            background-size: cover;
+        }
+
+        .mainrow {
+            padding: 6%;
+            margin: 3% auto;
+            max-width: 74%;
+            height: 417px;
+        }
+
+        .col1,
+        .col2 {
+            float: left;
+            width: 48%;
+        }
+
+        .col1,
+        .row1,
+        .row2 {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .col1 {
+            margin-right: 35px;
+            padding: 39px 0px 33px 53px;
+        }
+
+        .row1 {
+            padding: 14px 0px 45px 32px;
+            margin-bottom: 14px;
+            height: 351px;
+        }
+
+
+        .row1col1 {
+            float: left;
+            width: 50%;
+        }
+
+        .row1col2 {
+            float: left;
+            width: 50%;
+        }
+
+        .row2 {
+            clear: both;
+            height: 137px;
+            font-size: 56px;
+            text-align: center;
+            color: #39b7dd;
+        }
+
+        label {
+            display: block;
+            color: #c5ecfd;
+            margin-top: 25px;
+        }
+
+        input {
+            width: 85%;
+            background: none;
+            outline: 0;
+            border-width: 0 0 2px;
+            border-color: #c5ecfd;
+
+        }
+
+        .row1col2 button {
+            width: 84%;
+            height: 41px;
+            margin: 18px auto;
+            background: #39b7dd;
+            border: none;
+        }
+
+        .col1 button {
+            width: 84%;
+            height: 54px;
+            margin: 18px auto;
+            background: #39b7dd;
+            border: none;
+
+        }
+
+        textarea {
+            background: none;
+            outline: 0;
+            border-width: 0 0 2px;
+            border-color: #c5ecfd;
+            width: 85%;
+
+        }
+
+        .row1col2 textarea {
+            height: 207px;
+            width: 85%;
+
+        }
+
+        @media screen and (max-width: 480px) {
+            .col1, .col2 {
+                clear: both;
+                width: 100%;  
+                padding-left: 20px;              
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mainrow">
+        <div class="col1">
+            <label for="">Name</label>
+            <input type="text">
+            <label for="">Email address</label>
+            <input type="email">
+            <label for="">Phone</label>
+            <input type="tel" name="tel">
+            <label for="">subject</label>
+            <input type="text">
+            <label for="">Message</label>
+            <textarea name="" id="" cols="37" rows="2"></textarea><br>
+            <button>Send</button>
+        </div>
+        <div class="col2">
+            <div class="row1">
+                <div class="row1col1">
+                    <label for="">Name</label>
+                    <input type="text">
+                    <label for="">Email address</label>
+                    <input type="email">
+                    <label for="">Phone</label>
+                    <input type="tel" name="tel">
+                    <label for="">subject</label>
+                    <input type="text">
+                </div>
+                <div class="row1col2">
+                    <label for="">Message</label>
+                    <textarea name="" id="" cols="18" rows="11"></textarea><br>
+                    <button>Send</button>
+                </div>
+            </div>
+            <div class="row2">
+                CONTACT US FORM
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
