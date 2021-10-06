@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4octhomework1</title>
+    <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-auto-replace-svg="nest"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        nav ul {
+            /* float: right; */
+            display: flex;
+            flex-direction: row;
+            justify-content: right;
+            margin: 0 0% 0 0;
+            list-style-type: none;
+            padding: 20px 113px 20px 113px;
+            margin: 0px;
+            overflow: hidden;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            padding: 18px 20px;
+            display: inline-block;
+        }
+
+        nav ul li.left {
+            /* float: left; */
+        }
+
+        .row1 {
+            background-color: #f1f1f1;
+            height: 384px;
+        }
+
+        .row1col1 {
+            width: 30%;
+            float: left;
+            margin: 54px 56px 0 133px;
+        }
+
+        .row1col1 button {
+            height: 40px;
+            width: 140px;
+            margin: 81px 0 0 0;
+            background-color: #fd940d;
+            border: none;
+            border-radius: 3px;
+            font-size: 19px;
+            color: white;
+        }
+
+        .row1col2 {
+            width: 50%;
+            float: left;
+        }
+
+        .row1col2 .image1 {
+            padding: 55px 37px 0px 0;
+        }
+
+        .row1col2 .image1 img {
+            width: 100%;
+            height: 250px;
+        }
+
+        .row1::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .row2 {
+            clear: both;
+        }
+
+        .subrow2 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            margin: 27px 66px 0 61px;
+            font-size: 17px;
+        }
+
+        .row2col1,
+        .row2col2,
+        .row2col3 {
+            flex-basis: 340px;
+        }
+
+        .row2col3 img {
+            width: 100%;
+        }
+
+        .row2col1 img {
+            width: 100%;
+        }
+
+        .row2col2 img {
+            width: 100%;
+        }
+
+        .row2 h3 {
+            margin: 51px 0 0 129px;
+            font-size: 35px;
+        }
+
+        .row3 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            padding: 48px 78px 48px 78px;
+            margin: 90px 0 0 0;
+            background-color: #3c3636;
+            font-size: 17px;
+        }
+
+        .row3col1 {
+            flex-basis: 21%;
+            color: white;
+        }
+
+        .row3col2 {
+            flex-basis: 49%;
+            color: white;
+        }
+
+        .row3col3 {
+            flex-basis: 14%;
+            color: white;
+        }
+
+        .row3 h4 {
+            padding: 29px 0 11px 0;
+        }
+
+        button {
+            height: 40px;
+            width: 140px;
+            margin: 20px 0 0 0;
+            background-color: #fd940d;
+            border: none;
+            border-radius: 3px;
+            font-size: 19px;
+            color: white;
+        }
+
+        .subrow2 h4 {
+            margin: 26px 0 0px 0px;
+        }
+
+        .subrow2 p {
+            margin: 15px 0 0px 0px;
+
+        }
+
+        .footer {
+            font-size: 12px;
+            text-align: center;
+            padding: 18px 0 31px 0;
+        }
+
+        nav {
+            display: flex;
+            background-color: #3c3636;
+            gap: 398px;
+        }
+
+        @media screen and (min-width: 320px) and (max-width: 800px) {
+            .subrow2 {
+                flex-direction: column;
+                margin: 27px 27px 0 26px;
+            }
+
+            button {
+                margin-bottom: 39px;
+                margin-left: 61px;
+            }
+
+            .row2col1 h4,
+            p {
+                text-align: center;
+            }
+
+            .row2col2 h4,
+            p {
+                text-align: center;
+            }
+
+            .row2col3 h4,
+            p {
+                text-align: center;
+            }
+
+            .row2 h3 {
+                margin: 51px 0 0 92px;
+                font-size: 35px;
+            }
+
+            .row1col2 .image1 {
+                padding: 55px 47px 62px 9px;
+            }
+
+            .row1col2 {
+                width: 112%;
+                float: left;
+            }
+
+            .row1col1 {
+                width: 93%;
+                float: left;
+                margin: 54px 0 0 10px;
+            }
+
+            .row1col1 h3 {
+                text-align: center;
+            }
+
+            .row1col1 button {
+                margin: 31px 0 0 79px;
+            }
+
+            .row1 {
+                height: 661px;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 0;
+            }
+
+            nav ul{
+                flex-direction: column;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li class="left"> <a href="">Bloom</a></li>
+        </ul>
+        <ul>
+            <li> <a href="">Home</a></li>
+            <li> <a href="">About Us</a></li>
+            <li> <a href="">Services</a></li>
+            <li> <a href="">Portfolio</a></li>
+            <li> <a href="">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="row">
+            <div class="row1">
+                <div class="row1col1">
+                    <h3>Lorem ipsum dolor sit amet</h3>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed qui aliquam eos vitae, excepturi
+                        accusantium asperiores temporibus odio voluptatum velit minus iusto architecto, atque natus
+                        blanditiis incidunt fugiat unde, quos aspernatur et? Laborum amet, ab accusamus aliquid corporis
+                        itaque, possimus inventore, reprehenderit repellat iure est accusantium nisi quia ipsum nobis.
+                    </p>
+                    <button>Learn More</button>
+                </div>
+                <div class="row1col2">
+                    <div class="image1">
+                        <img src="https://assets.website-files.com/5e7ff3ec0c4ef4c974fa99e3/5e83f98bae1ad80129fcd7e5_wu-jianxiong-UniC8xhlzaE-unsplash.jpg?width=100&amp;height=100"
+                            alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="row2">
+                <h3>This is a Heading</h3>
+                <div class="subrow2">
+                    <div class="row2col1">
+                        <div>
+                            <img src="https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5ed6636cdd5d320006caf841%2FThe-Blackout-Tuesday-movement-is-causing-Instagram-feeds-to-turn-black-%2F960x0.jpg%3Ffit%3Dscale"
+                                alt="">
+                        </div>
+                        <h4>Lorem ipsum dolor sit</h4>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero odio minus maxime ipsam ea
+                            officia veritatis mollitia ipsa eos nihil!</p>
+                        <button>Learn More</button>
+                    </div>
+                    <div class="row2col2">
+                        <div>
+                            <img src="https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5ed6636cdd5d320006caf841%2FThe-Blackout-Tuesday-movement-is-causing-Instagram-feeds-to-turn-black-%2F960x0.jpg%3Ffit%3Dscale"
+                                alt="">
+                        </div>
+                        <h4>Lorem ipsum dolor sit</h4>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero odio minus maxime ipsam ea
+                            officia veritatis mollitia ipsa eos nihil!</p>
+                        <button>Learn More</button>
+                    </div>
+                    <div class="row2col3">
+                        <div>
+                            <img src="https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5ed6636cdd5d320006caf841%2FThe-Blackout-Tuesday-movement-is-causing-Instagram-feeds-to-turn-black-%2F960x0.jpg%3Ffit%3Dscale"
+                                alt="">
+                        </div>
+                        <h4>Lorem ipsum dolor sit</h4>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero odio minus maxime ipsam ea
+                            officia veritatis mollitia ipsa eos nihil!</p>
+                        <button>Learn More</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row3">
+                <div class="row3col1">
+                    <h4>Latest Posts</h4>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni, mollitia!</p>
+                    <h4>Latest Posts</h4>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni, mollitia!</p>
+                    <h4>Latest Posts</h4>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni, mollitia!</p>
+                </div>
+                <div class="row3col2">
+                    <h4>About</h4>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum incidunt eaque nulla nostrum,
+                    recusandae, cumque voluptas asperiores exercitationem non sit autem laboriosam illo, eius est
+                    veritatis quis deleniti tempora neque dolorum obcaecati repudiandae dignissimos Lorem ipsum dolor
+                    sit amet consectetur, adipisicing elit. Similique Lorem ipsum dolor, sit amet consectetur
+                    adipisicing elit. Earum rem non explicabo, aliquid exercitationem quam!
+                </div>
+                <div class="row3col3">
+                    <h4>Stay Connected</h4>
+                    <i class="fab fa-facebook-square"></i>
+                    <p>Facebook</p>
+                    <i class="fab fa-twitter"></i>
+                    <p>Twitter</p>
+                    <i class="fas fa-rss-square"></i>
+                    <p>RSS</p>
+                    <i class="fab fa-google-plus-g"></i>
+                    <p>Google+</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="footer">
+        <footer>
+            <p>Copyright (c) 2013. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+
+</html>
