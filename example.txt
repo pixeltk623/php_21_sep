@@ -1,0 +1,12 @@
+CSS 2D Transforms Methods
+With the CSS transform property you can use the following 2D transformation methods:
+
+translate() transform: translate(50px, 100px);
+rotate() transform: rotate(20deg); rotate(-20deg);
+scaleX() scaleX(2);
+scaleY()
+scale() scale(2, 3); scale(0.5, 0.5);
+skewX()
+skewY()
+skew()
+matrix()
