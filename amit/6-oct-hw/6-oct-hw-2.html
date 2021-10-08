@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Roboto, Helvetica Neue, sans-serif;
+        }
+
+        .sectioncolumn {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .sectioncolumn .courses1 {
+            /* width: 323.98px; */
+            flex: 27%;
+            border: 1px solid #e7e7e7;
+            padding: 20px;
+            margin: 30px 10px 10px 0px;
+            border-radius: 4px;
+        }
+
+        .sectioncolumn .courses2 {
+            /* width: 323.98px; */
+            flex: 27%;
+            border: 1px solid #e7e7e7;
+            padding: 20px;
+            margin: 30px 10px 10px;
+            border-radius: 4px;
+        }
+
+        .sectioncolumn .courses3 {
+            /* width: 323.98px; */
+            flex: 27%;
+            border: 1px solid #e7e7e7;
+            padding: 20px;
+            margin: 30px 0px 10px 10px;
+            border-radius: 4px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1140px;
+            margin: 0 auto;
+            flex-direction: column;
+            box-sizing: border-box;
+            display: flex;
+        }
+
+        .sectioncolumn img {
+            max-height: 55px;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .sectioncolumn h4 {
+            font-size: 16px;
+            text-transform: capitalize;
+            margin-bottom: 12px;
+        }
+
+        .sectioncolumn p {
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: .5px;
+            color: #333;
+            margin-bottom: 10px;
+            line-height: 22px;
+        }
+
+        .sectionHeading h1 {
+            font-size: 40px;
+            font-weight: 400;
+            color: #005b98;
+            margin-bottom: 10px;
+        }
+
+        .sectionHeading p {
+            max-width: 500px;
+            font-size: 20px;
+            color: #707070;
+        }
+
+        .sectionHeading2 h1 {
+            font-size: 40px;
+            font-weight: 400;
+            color: #005b98;
+            margin-bottom: 10px;
+        }
+
+        .sectionHeading2 p {
+            max-width: 500px;
+            font-size: 20px;
+            color: #707070;
+        }
+
+        .popularcourses {
+            margin: 60px 0;
+        }
+
+        .clientsection {
+            margin: 60px 0;
+            background-color: #f9fbff;
+            padding: 50px 0;
+        }
+
+        .carouselslide {
+            color: black;
+            background-color: #f9fbff;
+            padding: 83px 103px;
+            border: 1px solid #eee;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+            flex: 100%;
+        }
+
+        .clientsIcon {
+            flex-flow: row wrap;
+            box-sizing: border-box;
+            display: flex;
+            align-items: stretch;
+            align-content: stretch;
+            justify-content: center;
+        }
+
+        .clients {
+            background-color: white;
+            flex: 0%;
+            margin: 44px 28px 44px 0;
+            text-align: center;
+            border-radius: 47px;
+        }
+
+        .clients img {
+            max-width: 120px;
+        }
+
+        .advantagescolumns {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 55px;
+            margin: 35px 0 0 0;
+        }
+
+        .advantagescolumns div {
+            flex: 30%;
+            display: flex;
+            flex-flow: column wrap;
+        }
+
+        .advantagescolumns div img {
+            max-width: 500px;
+            height: 230px;
+        }
+
+        .advantagescolumns div .specialimage {
+            max-width: 460px;
+            height: 230px;
+        }
+
+        .advantagescolumns div h2 {
+            font-size: 22px;
+            font-weight: 600;
+            color: #707070;
+            margin: 20px 0;
+        }
+
+        .advantagescolumns div p {
+            background-color: #fffeff;
+            font-size: 16px;
+            line-height: 22px;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        button {
+            color: #005b98;
+            float: left;
+            background-color: white;
+            border: none;
+            margin: 12px 22px 0 0;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        @media screen and (min-width: 320px) and (max-width: 425px) {
+            .sectioncolumn .courses1 {
+                flex: 100%;
+                margin: 30px 10px 10px 10px;
+            }
+
+            .sectioncolumn .courses2 {
+                flex: 100%;
+                margin: 30px 10px 10px 10px;
+            }
+
+            .sectioncolumn .courses3 {
+                flex: 100%;
+                margin: 30px 10px 10px 10px;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+
+            .sectionHeading {
+                margin-left: 10px;
+                text-align: center;
+            }
+
+            .carouselslide {
+                padding: 83px 24px;
+                text-align: center;
+            }
+
+            .clients {
+                margin: 44px 9px 44px 9px;
+            }
+
+            .advantagescolumns div {
+                flex: 43%;
+            }
+        }
+
+        @media screen and (min-width: 425px) and (max-width: 1159px) {
+            .sectioncolumn .courses1 {
+                margin: 30px 10px 10px 10px;
+            }
+
+            .sectioncolumn .courses2 {
+                margin: 30px 10px 10px 10px;
+            }
+
+            .sectioncolumn .courses3 {
+                margin: 30px 10px 10px 10px;
+            }
+
+            .container {
+                padding: 0 25px;
+            }
+
+            .sectionHeading {
+                margin-left: 10px;
+                text-align: center;
+            }
+
+            .sectionHeading p {
+                max-width: 100%;
+            }
+
+            .sectionHeading2 {
+                margin-left: 0px;
+                text-align: center;
+            }
+
+            .sectionHeading2 p {
+                max-width: 100%;
+            }
+
+            .carouselslide {
+                padding: 83px 24px;
+            }
+
+            .clients {
+                margin: 44px 9px 44px 9px;
+            }
+
+        }
+    </style>
+
+    <!-- 425  768  1024 -->
+
+</head>
+
+<body>
+    <section class="popularcourses">
+        <div class="container">
+            <div class="sectionHeading">
+                <h1>Popular Courses</h1>
+                <p>Upskill yourself with the industry recognised course with one of the best leading industry mentors.
+                </p>
+            </div>
+            <div class="sectioncolumn">
+                <div class="courses1">
+                    <img src="https://www.teqstories.com/assets/images/pc/AWS.svg"
+                        alt="AWS Solutions Architect Certification Course">
+                    <h4>AWS Solutions Architect Certification Course</h4>
+                    <p> AWS Certification course provided by Teqstories authorizes the cloud experts to assist the
+                        professionals feature the in-demand skills. The organizations build productive and creative
+                        teams for clo... </p>
+                    <button class="readmore">Read More</button>
+                </div>
+                <div class="courses2">
+                    <img src="https://www.teqstories.com/assets/images/pc/Devops.svg"
+                        alt="DevOps Professional Certification Course">
+                    <h4>DevOps Professional Certification Course</h4>
+                    <p> AWS Certification course provided by Teqstories authorizes the cloud experts to assist the
+                        professionals feature the in-demand skills. The organizations build productive and creative
+                        teams for clo... </p>
+                    <button class="readmore">Read More</button>
+                </div>
+                <div class="courses3">
+                    <img src="https://www.teqstories.com/assets/images/pc/data.svg"
+                        alt="Data Science with Python Certification Course">
+                    <h4>Data Science with Python Certification Course</h4>
+                    <p>Data Science serves the purpose to find patterns within data. The Data Science Certification is
+                        recommended for professionals and job seekers so as to make quicker and better decisions, that
+                        take ...</p>
+                    <button class="readmore">Read More</button>
+                </div>
+            </div>
+            <div class="sectioncolumn">
+                <div class="courses1">
+                    <img src="https://www.teqstories.com/assets/images/pc/Java.svg" alt="Java Certification Course">
+                    <h4>AWS Solutions Architect Certification Course</h4>
+                    <p> AWS Certification course provided by Teqstories authorizes the cloud experts to assist the
+                        professionals feature the in-demand skills. The organizations build productive and creative
+                        teams for clo... </p>
+                    <button class="readmore">Read More</button>
+                </div>
+                <div class="courses2">
+                    <img src="https://www.teqstories.com/assets/images/pc/react.svg"
+                        alt="React JS with Redux Certification Course">
+                    <h4>DevOps Professional Certification Course</h4>
+                    <p> AWS Certification course provided by Teqstories authorizes the cloud experts to assist the
+                        professionals feature the in-demand skills. The organizations build productive and creative
+                        teams for clo... </p>
+                    <button class="readmore">Read More</button>
+                </div>
+                <div class="courses3">
+                    <img src="https://www.teqstories.com/assets/images/pc/Angular.svg"
+                        alt="Angular Certification Course">
+                    <h4>Data Science with Python Certification Course</h4>
+                    <p>Data Science serves the purpose to find patterns within data. The Data Science Certification is
+                        recommended for professionals and job seekers so as to make quicker and better decisions, that
+                        take ...</p>
+                    <button class="readmore">Read More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="popularcourses" style="margin: 0 10px;">
+        <div class="container">
+            <div class="sectionHeading2">
+                <h1>Customer Stories</h1>
+                <p>We at Teqstories are committed in delivering the best to our customers.</p>
+            </div>
+            <div class="carouselslide">
+                <img src="https://www.teqstories.com/assets/images/person2.png" alt="">
+                <p>I took aws and devops training from teqstories. My trainer was keshav sir. He
+                    was so humble and polite and cleared all my doubts. The support team was also always there to
+                    resolve all my doubts. I wil...</p>
+                <h4 _ngcontent-qyx-c97="">Rikta Ghosh</h4>
+                <h4 _ngcontent-qyx-c97="">Team Lead at Accenture</h4>
+            </div>
+        </div>
+    </section>
+
+    <section class="clientsection">
+        <div class="container">
+            <div class="sectionHeading">
+                <h1>Clients</h1>
+                <p>Trusted by the best</p>
+            </div>
+            <div class="clientsIcon">
+                <div class="clients"><img _ngcontent-qyx-c98="" src="https://www.teqstories.com/assets/images/01.png"
+                        alt="clients"></div>
+                <div class="clients"><img _ngcontent-qyx-c98="" src="https://www.teqstories.com/assets/images/02.png"
+                        alt="clients"></div>
+                <div class="clients"><img _ngcontent-qyx-c98="" src="https://www.teqstories.com/assets/images/03.png"
+                        alt="clients"></div>
+                <div class="clients"><img _ngcontent-qyx-c98="" src="https://www.teqstories.com/assets/images/04.png"
+                        alt="clients"></div>
+                <div class="clients"><img _ngcontent-qyx-c98="" src="https://www.teqstories.com/assets/images/05.png"
+                        alt="clients"></div>
+                <div class="clients"><img _ngcontent-qyx-c98="" src="https://www.teqstories.com/assets/images/06.png"
+                        alt="clients"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="popularcourses advantagessection">
+        <div class="container">
+            <div class="sectionHeading">
+                <h1>The Teqstories Advantage</h1>
+            </div>
+            <div class="advantagescolumns">
+                <div>
+                    <img src="https://www.tooplate.com/templates/2125_artxibition/assets/images/venue-02.jpg"
+                        alt="benefits">
+                    <h2>Free Demo Session</h2>
+                    <p>Experience the Demo session from our best instructors by getting in touch
+                        with our technical representatives.</p>
+                </div>
+                <div>
+                    <img src="https://www.tooplate.com/templates/2125_artxibition/assets/images/venue-01.jpg"
+                        alt="benefits">
+                    <h2>Access to LMS</h2>
+                    <p>The TeqStories LMS portal keeps you updated with a huge library of recorded
+                        video lectures and supports with an active community for all your queries.</p>
+                </div>
+                <div>
+                    <img class="specialimage" src="https://www.teqstories.com/assets/images/adv01.jpg" alt="benefits">
+                    <h2>24/7 Technical Support</h2>
+                    <p>Our senior mentors are always happy to guide on your doubt clarifications
+                        and provide consultation to ensure a smooth learning experience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
