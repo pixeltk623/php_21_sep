@@ -198,6 +198,47 @@
             font-weight: 600;
         }
 
+        .footercontainer {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .footer {
+            background-color: #191919;
+            padding: 60px 0;
+            color: #fff;
+            margin: 60px 0 0 0;
+        }
+
+        .footercontent a {
+            margin-bottom: 10px;
+            color: #a2a2a2;
+            text-decoration: none;
+        }
+
+        .footercontent h3 {
+            margin-bottom: 15px;
+        }
+
+        .followus a {
+            display: inline-block;
+            background-color: #353535;
+            padding: 4px;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            margin-right: 15px;
+            margin-bottom: 15px;
+        }
+
+        .followus img {
+            width: 20px;
+            height: 20px;
+        }
+
         @media screen and (min-width: 320px) and (max-width: 425px) {
             .sectioncolumn .courses1 {
                 flex: 100%;
@@ -234,6 +275,11 @@
 
             .advantagescolumns div {
                 flex: 43%;
+            }
+
+            .footercontent {
+                flex: 100% !important;
+                margin-bottom: 26px;
             }
         }
 
@@ -421,6 +467,63 @@
                     <p>Our senior mentors are always happy to guide on your doubt clarifications
                         and provide consultation to ensure a smooth learning experience.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class=" popularcourses footer">
+        <div class="container footercontainer">
+            <div class="followus footercontent" style="flex: 10%;">
+                <h3>Follow us</h3>
+                <a target="_black"><img src="https://www.teqstories.com/assets/images/fb_icon.png" alt="facebook"></a>
+                <a target="_black"><img src="https://www.teqstories.com/assets/images/twitter_icon.png"
+                        alt="twitter"></a>
+                <a target="_black"><img src="https://www.teqstories.com/assets/images/youtube_icon.png"
+                        alt="youtube"></a>
+                <a target="_black"><img src="https://www.teqstories.com/assets/images/linkedin_icon.png"
+                        alt="linkedin"></a>
+                <a target="_black"><img src="https://www.teqstories.com/assets/images/insta_icon.png"
+                        alt="instagram"></a>
+                <a target="_black"><img src="https://www.teqstories.com/assets/images/whatsapp-32.png"
+                        alt="whatsapp"></a>
+            </div>
+
+            <div class="footercontent" style="flex: 12%;display: flex;flex-direction: column;">
+                <h3>Company</h3>
+                <a> About us </a>
+                <a> Careers </a>
+                <a> Contact us </a>
+            </div>
+
+            <div class="footercontent" style="flex: 26%;display: flex;flex-direction: column;">
+                <h3>Trending Certification Courses</h3>
+                <a href="">Machine Learning Certification</a>
+                <a href="">Python Certification Course</a>
+                <a href="">Data Scientist Training</a>
+                <a href="">Cloud Certification</a>
+                <a href="">Angular Certification</a>
+                <a href="">Azure Cloud Certification</a>
+                <a href="">Web Development Training</a>
+                <a href="">Aws Solution Architect Training </a>
+                <a href="">Java Certification Training</a>
+            </div>
+
+            <div class="footercontent" style="flex: 30%;display: flex;flex-direction: column;">
+                <h3>&nbsp;</h3>
+                <a href="">Node js certification training </a>
+                <a href="">Devops professional certification </a>
+                <a href="">Java certification training </a>
+                <a href="">Spring Boot training </a>
+                <a href="">Mean stack development certification </a>
+                <a href="">Mern stack development certification </a>
+                <a href="">PHP certification training </a>
+                <a href="">Software testing master training </a>
+                <a href="">Jenkins certification training </a>
+            </div>
+
+            <div class="footercontent" style="flex-basis: 12%;">
+                <h3>Work with us</h3>
+                <a> Become an instructor </a>
             </div>
         </div>
     </section>
