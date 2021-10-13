@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#box {
+			width: 800px;
+			height: 600px;
+			border: 1px solid black;
+			margin: auto;
+			position: relative;
+		}
+		#box2 {
+			position: absolute;
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			animation-name: counter;
+			animation-duration: 1s;
+			animation-delay: 0s;
+			animation-iteration-count: infinite;
+			animation-direction: alternate;
+			animation-timing-function: ease-in-out; 
+
+		}
+
+		@keyframes counter {
+			0% {
+				background-color: red;
+				top: 0;
+				left: 0;
+			}
+			25% {
+				background-color: blue;
+				top: 0;
+				left: 700px;
+			}
+			50% {
+				background-color: yellow;
+				left: 700px;
+				top: 500px;
+			}
+			75% {
+
+				background-color: pink;
+				left: 0px;
+				top: 500px;
+			}
+
+			100% {
+				background-color: skyblue;
+				left: 0px;
+				top: 0px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<div id="box2"></div>
+	</div>
+</body>
+</html>
