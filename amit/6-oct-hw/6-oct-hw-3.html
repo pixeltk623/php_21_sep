@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .popularcourses {
+            margin: 60px 0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+
+        .topcourses {
+            margin: 0;
+        }
+
+        .intro {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .intro h1 {
+            font-size: 38px;
+            font-weight: 600;
+            color: #2672cb;
+            margin: 0 129px;
+            flex: 100%;
+        }
+
+        .intro ul {
+            padding: 0 16px;
+            flex: 100%;
+            margin: 41px 129px;
+        }
+
+        .intro ul li {
+            font-size: 19px;
+            letter-spacing: .22px;
+            color: rgba(18, 14, 61, .8);
+            margin-bottom: 8px;
+        }
+
+        .contentoverview {
+            margin: 0 128px;
+            display: flex;
+            flex-flow: row wrap;
+            flex: 100%;
+            border-radius: 4px;
+            box-shadow: 0 3px 10px 0 rgba(18, 14, 61, .12);
+            padding: 30px;
+            max-width: 962px;
+        }
+
+        .section2 {
+            display: flex;
+            flex-direction: row;
+            margin: 60px 0;
+        }
+
+        .amit1,
+        .amit3,
+        .amit4 {
+            flex: 25%;
+        }
+
+        .amit2 {
+            flex: 15%;
+        }
+
+        .section2 {
+            display: flex;
+            flex-direction: row;
+            text-align: center;
+        }
+
+        .contentoverview p {
+            font-size: 24px;
+        }
+
+        .contentoverview span {
+            font-size: 14px;
+            color: rgba(18, 14, 61, .35);
+        }
+
+        .coursefeescontent {
+            display: flex;
+            flex-flow: column wrap;
+            background-color: #2d74dc;
+            border-radius: 20px;
+            padding: 35px;
+        }
+
+        .row1 {
+            display: flex;
+            flex-flow: row wrap;
+        }
+
+        .col1 {
+            flex: 55%;
+            position: relative;
+        }
+
+        .col2 {
+            flex: 40%;
+        }
+
+        .col1::before {
+            content: "";
+            height: 100%;
+            border-left: 2px dashed #fff;
+            position: absolute;
+            right: 110px;
+        }
+
+        .row1 .col1 h5 {
+            font-size: 25px;
+            color: #fff;
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+
+        .row1 .col1 span {
+            font-size: 44px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .row1 .col1 .discount {
+            font-size: 18px;
+            margin-right: 6px;
+            font-weight: 500;
+            color: #fff;
+            text-decoration: line-through;
+        }
+
+        .row1 .col1 p {
+            font-size: 15px;
+            letter-spacing: .2px;
+            color: #fff;
+            margin-top: 10px;
+        }
+
+        .row1 .col1 button {
+            background-color: #1dcea6;
+            border: none;
+            padding: 9px;
+            width: 129px;
+            height: 43px;
+            border-radius: 5px;
+            margin: 24px 0 0 0;
+            font-size: 16px;
+            color: white;
+        }
+
+        .col2 h3 {
+            font-family: HelveticaNeue;
+            font-size: 30px;
+            font-weight: 500;
+            line-height: 1.53;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .col2 p {
+            font-size: 13px;
+            letter-spacing: .2px;
+            color: #fff;
+            margin-bottom: 25px;
+        }
+
+        .col2 form input {
+            display: block;
+            border-radius: 4px;
+            background-color: #fff;
+            width: 51%;
+            padding: 8px 10px;
+            height: 20px;
+            border: 1px solid #ccc;
+            color: #333;
+            margin-bottom: 31px;
+            margin-top: -14px;
+        }
+
+        .col2 form button {
+            background-color: #1dcea6;
+            border: none;
+            padding: 9px;
+            width: 97px;
+            height: 43px;
+            border-radius: 5px;
+            font-size: 17px;
+            color: white;
+        }
+
+        .coursefees {
+            display: flex;
+            flex-flow: row wrap;
+            flex: 100%;
+            max-width: 1023px;
+            margin: 0 128px 0 128px;
+        }
+
+        .coursefees .head {
+            flex: 100%;
+            margin-bottom: 30px;
+        }
+
+        .coursefees .coursefeescontent {
+            flex: 100%;
+        }
+
+        .upcomingbatches {
+            display: flex;
+            flex-flow: row wrap;
+        }
+
+        .row2 {
+            display: flex;
+            flex-flow: row wrap;
+            margin-top: 83px;
+            justify-content: space-evenly;
+            gap: 25px;
+        }
+
+        .col11,
+        .col21,
+        .col31,
+        .col41 {
+            background: white;
+            padding: 21px;
+            border-radius: 5px;
+        }
+
+        /* .col11 {
+            margin: 0px 16px 0 0;
+        }
+
+        .col21 {
+            margin: 0 16px;
+        }
+
+        .col31 {
+            margin: 0 16px;
+        }
+
+        .col41 {
+            margin: 0 0 0 16px;
+        } */
+
+        .row2 p {
+            font-size: 14px;
+            color: rgba(18, 14, 61, .4);
+            display: block;
+            margin-bottom: 2px;
+            margin-top: 10px;
+        }
+
+        .row2 h2 {
+            font-size: 21px;
+            font-weight: 600;
+            color: #3f3d64;
+            margin-bottom: 10px;
+        }
+
+        @media screen and (min-width: 425px) and (max-width: 1024px) {
+            .contentoverview {
+                margin: 0;
+                text-align: center;
+            }
+
+            .amit1,
+            .amit3,
+            .amit4 {
+                flex: 50%;
+                margin: 22px 0 26px 0;
+            }
+
+            .amit2 {
+                flex: 50%;
+                margin: 22px 0 26px 0;
+            }
+
+            .row1 {
+                flex-flow: column wrap;
+            }
+
+            .col1::before {
+                display: none;
+            }
+
+            .col1 {
+                flex: 55%;
+                position: relative;
+                margin-bottom: 66px;
+            }
+        }
+
+        @media screen and (min-width: 320px) and (max-width: 425px) {
+            .intro h1 {
+                margin: 0 25px;
+            }
+
+            .intro ul {
+                margin: 41px 21px;
+            }
+
+            .amit1,
+            .amit3,
+            .amit4 {
+                flex: 100%;
+                margin: 22px 0 26px 0;
+            }
+
+            .amit2 {
+                flex: 100%;
+                margin: 22px 0 26px 0;
+            }
+
+            .contentoverview {
+                margin: 0;
+            }
+
+            .row1 {
+                flex-flow: column wrap;
+            }
+
+            .col1::before {
+                display: none;
+            }
+
+            .col1 {
+                flex: 55%;
+                position: relative;
+                margin-bottom: 66px;
+            }
+
+            .coursefees {
+                margin: 0 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="popularcourses">
+        <div class="container topcourses">
+            <div class="intro">
+                <h1>MERN Stack Development Certification Training Course</h1>
+                <ul>
+                    <li class="ullist">Learn to create Web Application from scratch</li>
+                    <li class="ullist">Learn Data-parsing Techniques from Front-end and Back-end</li>
+                    <li class="ullist">Become an expert in mern (MongoDB), Express, React and Nodejs Stack
+                    </li>
+                    <li class="ullist">Master the concept of Front-end and Back-end Javascript Technologies
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="popularcourses section2">
+        <div class="container contentoverview">
+            <div class="amit1">
+                <p style="color: #f5a623;">5000+</p>
+                <span>Students empowered</span>
+            </div>
+            <div class="amit2">
+                <p style="color: #ff8982;">Online</p>
+                <span>Format</span>
+            </div>
+            <div class="amit3">
+                <p style="color: #00abb1;">60 hr</p>
+                <span>Recommended 58-63 hr</span>
+            </div>
+            <div class="amit4">
+                <p style="color: #00c190;">Sep 06</p>
+                <span>Start Date</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="popularcourses upcomingbatches">
+        <div class="container coursefees">
+            <div class="head">
+                <h2>Upcoming Batches</h2>
+            </div>
+
+            <div class="coursefeescontent">
+                <div class="row1">
+                    <div class="col1">
+                        <h5>Course fees</h5>
+                        <span>₹22,990.00</span>
+                        <p>
+                            <span class="discount">₹29,900.00</span>
+                            Discount offered worth ₹6,910.00
+                        </p>
+                        <p>Batches are getting filling fast… HURRY UP!</p>
+                        <button>Enroll now</button>
+                    </div>
+                    <div class="col2">
+                        <h3>Not sure? Talk to our advisors</h3>
+                        <p>Drop your email and phone no. our advisors will get you soon</p>
+                        <form action="">
+                            <input type="email" placeholder="Email">
+                            <input type="text" placeholder="Phone Number">
+                            <button>Send</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="row2">
+                    <div class="col11">
+                        <p>Starting Date</p>
+                        <h2> Sep 06 </h2>
+                        <p>Batch</p>
+                        <h2>Weekdays</h2>
+                        <p>Time</p>
+                        <h2>09:00am - 11:00am</h2>
+                    </div>
+                    <div class="col21">
+                        <p>Starting Date</p>
+                        <h2> Sep 11</h2>
+                        <p>Batch</p>
+                        <h2>Weekends</h2>
+                        <p>Time</p>
+                        <h2> 09:00am - 11:00am</h2>
+                    </div>
+                    <div class="col31">
+                        <p>Starting Date</p>
+                        <h2>Sep 20</h2>
+                        <p>Batch</p>
+                        <h2>Weekends</h2>
+                        <p>Time</p>
+                        <h2> 07:30pm - 08:30pm </h2>
+                    </div>
+                    <div class="col41">
+                        <p>Starting Date</p>
+                        <h2>Sep 25</h2>
+                        <p>Batch</p>
+                        <h2>Weekends</h2>
+                        <p>Time</p>
+                        <h2> 2:00pm - 4:00pm</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
