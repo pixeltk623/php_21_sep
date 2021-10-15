@@ -2,21 +2,87 @@
 <html>
 <head>
 	<title></title>
+	<style type="text/css">
+		table {
+			margin: auto;
+		}
+		table tr th,td {
+			padding: 10px;
+		}
+	</style>
 </head>
 <body>
 
-<script src="main.js"></script>
-<script type="text/javascript">
+	<form method="post">
+		<table border="1" style="border-collapse: collapse; width: 500px;">
+			<tr>
+				<th>First Number</th>
+				<th>
+					<input type="number" name="fn" id="fn">
+					<!-- <span style="color: red;">Pz Enter First Number</span> -->
+				</th>
+			</tr>
+
+			<tr>
+				<th>Secon Number</th>
+				<th>
+					<input type="number" name="sn" id="sn">
+				</th>
+			</tr>
+
+			<tr>
+				<th>Operation</th>
+				<th>
+					<select name="op" id="op">
+						<option value="">Select</option>
+						<option value="+">+</option>
+						<option value="-">-</option>
+						<option value="*">*</option>
+						<option value="/">/</option>
+					</select>
+				</th>
+			</tr>
+			<tr>
+				<th colspan="2">
+					<input type="submit" name="submit" onclick="return makeCalculator()">
+				</th>
+			</tr>
+		</table>
+	</form>
+
+	<br>
+	<br>
+	<div id="res"></div>
+
+	<!-- <h1 id="h1" class="h1">This is H1</h1>
+
+	<p class="p1">This is Para</p>
+
+	<input type="radio" name="gender" value="Male" checked>Male
+	<input type="radio" name="gender" value="Male">Female
+
+	<p>This is Para</p>
+
+	<button type="button" onclick="clickMe()">Button</button> -->
 
 
-	
-	//alert("Hello This is Kumar")
+
+<!-- <script src="main.js"></script> -->
+<script src="control.js">
+		//alert("Hello This is Kumar")
 
 	// console.log("");
 	// console.log("");
 	// console.log("");
 	// console.log("");
 	// console.log("Hello This is Kumar")
+</script>
+<!-- <script src="custom.js"></script>
+<script type="text/javascript"> -->
+
+
+	
+
 
 </script>
 </body>
