@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title></title>
 	<style type="text/css"></style>
 </head>
+
 <body>
 	<h1>Media In HTML5 </h1>
 
 	<h1>Video</h1>
 
 	<button type="button" onclick="playAndPause()">Play/Pause</button>
-
+ 
 	<button type="button" onclick="makeBig()">Make Big</button>
 
 	<button type="button" onclick="makeNormal()">Make Normal</button>
@@ -18,8 +20,8 @@
 	<br>
 	<br>
 
-	<video id="myvideo" controls width="500" controlsList = "nodownload">
-		<source src="../assets/video1.mp4" type="video/mp4">
+	<video id="myvideo" controls width="500" controlsList="nodownload" autoplay muted >
+		<source src="video.mp4" type="video/mp4"> 
 	</video>
 
 
@@ -40,30 +42,32 @@
 	<iframe src="https://www.youtube.com/embed/6o5Vd0BcAbA?autoplay=0&&mute=1&list=PLd9tDukllEepYrfX-zy6NLbLRmHdPsukE" width="500" height="300" allowfullscreen ></iframe> -->
 
 	<script type="text/javascript">
-		var myvideo = document.getElementById('myvideo');
+		var myVideo = document.getElementById('myvideo');
 
 		//alert(myvideo)
 
-		console.log(myvideo);
+		console.log(myVideo);
+
 		function playAndPause() {
-			
+
 			//console.log(myvideo.paused);
 
-			if (myvideo.paused) {
-				myvideo.play();
+			if (myVideo.paused) {
+				myVideo.play();
 			} else {
-				myvideo.pause();
+				myVideo.pause();
 
 			}
 		}
 
 		function makeBig() {
-			myvideo.width = "800";
+			myVideo.width = "800";
 		}
 
 		function makeNormal() {
-			myvideo.width = "500";
+			myVideo.width = "500";
 		}
 	</script>
 </body>
+
 </html>
