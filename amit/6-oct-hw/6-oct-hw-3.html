@@ -61,7 +61,7 @@
             border-radius: 4px;
             box-shadow: 0 3px 10px 0 rgba(18, 14, 61, .12);
             padding: 30px;
-            max-width: 962px;
+            max-width: 1076px;
         }
 
         .section2 {
@@ -113,11 +113,11 @@
             position: relative;
         }
 
-        .col2 {
+        .coursefeescontent .row1 .col2 {
             flex: 40%;
         }
 
-        .col1::before {
+        .coursefeescontent .row1 .col1::before {
             content: "";
             height: 100%;
             border-left: 2px dashed #fff;
@@ -210,7 +210,6 @@
             display: flex;
             flex-flow: row wrap;
             flex: 100%;
-            max-width: 1023px;
             margin: 0 128px 0 128px;
         }
 
@@ -228,12 +227,11 @@
             flex-flow: row wrap;
         }
 
-        .row2 {
+        .coursefeescontent .row2 {
             display: flex;
             flex-flow: row wrap;
             margin-top: 83px;
             justify-content: space-evenly;
-            gap: 25px;
         }
 
         .col11,
@@ -241,25 +239,10 @@
         .col31,
         .col41 {
             background: white;
-            padding: 21px;
+            padding: 34px;
             border-radius: 5px;
+            margin-bottom: 33px;
         }
-
-        /* .col11 {
-            margin: 0px 16px 0 0;
-        }
-
-        .col21 {
-            margin: 0 16px;
-        }
-
-        .col31 {
-            margin: 0 16px;
-        }
-
-        .col41 {
-            margin: 0 0 0 16px;
-        } */
 
         .row2 p {
             font-size: 14px;
@@ -274,6 +257,253 @@
             font-weight: 600;
             color: #3f3d64;
             margin-bottom: 10px;
+        }
+
+        .points ul li {
+            display: inline-block;
+            font-size: 16px;
+            letter-spacing: .23px;
+            color: rgba(18, 14, 61, .8);
+            background-image: url(https://www.teqstories.com/star.7dfba54f14611c6d50c3.png);
+            background-repeat: no-repeat;
+            width: 342.5px;
+            padding-left: 28px;
+            background-size: 18px;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .keyhighlights h2 {
+            margin-bottom: 30px;
+        }
+
+        .keyhighlights .points {
+            display: flex;
+            flex-flow: row wrap;
+        }
+
+        .keyhighlights .points .col1,
+        .col2 {
+            flex: 50%;
+        }
+
+        .toolscovered .icons img {
+            max-width: 115px;
+            /* width: 115px; */
+            margin: 0 16px 16px 0;
+        }
+
+        .toolscovered .icons {
+            display: flex;
+            flex-flow: row wrap;
+        }
+
+        .toolscovered .head h2 {
+            margin-bottom: 30px;
+        }
+
+        .highllightssection {
+            display: flex;
+            flex-flow: row wrap;
+            margin: 0 128px;
+        }
+
+        .highllightssection .keyhighlights {
+            display: flex;
+            flex-direction: column;
+            flex: 65%;
+        }
+
+        .highllightssection .toolscovered {
+            display: flex;
+            flex-direction: column;
+            flex: 35%;
+        }
+
+        .certificationandcontact .certification {
+            border-radius: 4px;
+            border: 1px solid #d0d6e2;
+        }
+
+        .certificationandcontact .certification .head1 {
+            background-color: #4a90e2;
+            font-size: 20px;
+            font-weight: 500;
+            color: #fff;
+            padding: 20px;
+        }
+
+        .certificationandcontact .certification .session1 {
+            display: flex;
+            flex-flow: column wrap;
+            padding: 20px;
+            gap: 67px;
+            align-items: center;
+        }
+
+        .certificationandcontact .contact {
+            border-radius: 4px;
+            border: 1px solid #ffc662;
+            background-color: #fef5e6;
+            padding: 30px;
+        }
+
+        .contact form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .certificationandcontact .contact button {
+            background-color: #1dcea6;
+            border: none;
+            padding: 9px;
+            width: 97px;
+            height: 43px;
+            border-radius: 5px;
+            font-size: 17px;
+            color: white;
+        }
+
+        .certificationandcontact form input {
+            border: 1px solid #d0d6e2;
+            border-radius: 4px;
+            color: #333;
+            outline: none;
+            font-size: 16px;
+            padding: 13px;
+            margin-right: 15px;
+            margin-bottom: 20px;
+            margin-top: 10px;
+        }
+
+        .certificationandcontact {
+            display: grid;
+            grid-template-columns: auto auto;
+            margin: 0 128px 0 128px;
+            grid-gap: 43px;
+        }
+
+        .certificationandcontact .session1 button {
+            background-color: #1dcea6;
+            border: none;
+            padding: 9px;
+            width: 195px;
+            height: 46px;
+            border-radius: 5px;
+            font-size: 17px;
+            color: white;
+        }
+
+        .certificationandcontact .contact h3 {
+            margin-bottom: 15px;
+        }
+
+        .certificationandcontact .contact p {
+            margin-bottom: 15px;
+        }
+
+        .coursedetails {
+            display: grid;
+            grid-gap: 20px;
+        }
+
+        .coursedetails .paths {
+            font-size: 20px;
+            font-weight: 500;
+            color: black;
+        }
+
+        .sectioncolumn {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 128px;
+            text-align: center;
+        }
+
+        .sectioncolumn .courses1 {
+            flex: 27%;
+            border: 1px solid #e7e7e7;
+            padding: 20px;
+            margin: 30px 10px 10px 0px;
+            border-radius: 4px;
+        }
+
+        .sectioncolumn .courses2 {
+            flex: 27%;
+            border: 1px solid #e7e7e7;
+            padding: 20px;
+            margin: 30px 10px 10px;
+            border-radius: 4px;
+        }
+
+        .sectioncolumn .courses3 {
+            flex: 27%;
+            border: 1px solid #e7e7e7;
+            padding: 20px;
+            margin: 30px 0px 10px 10px;
+            border-radius: 4px;
+        }
+
+        .sectioncolumn img {
+            display: inline-block;
+            height: 70px;
+            margin-bottom: 20px;
+        }
+
+        .sectioncolumn p {
+            font-family: HelveticaNeue;
+            font-size: 14px;
+            line-height: 1.47;
+            color: rgba(18, 14, 61, .5);
+            margin: 20px 0;
+        }
+
+        .industrialprojects {
+            margin: 60px 0;
+        }
+
+        .industrialprojects .head {
+            margin: 0 128px;
+        }
+
+        .popularcourses {
+            margin: 60px 0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1140px;
+            margin: 0 auto;
+            flex-direction: column;
+            box-sizing: border-box;
+            display: flex;
+        }
+
+        .sectionHeading2 h1 {
+            font-size: 40px;
+            font-weight: 400;
+            color: #005b98;
+            margin-bottom: 10px;
+        }
+
+        .sectionHeading2 p {
+            max-width: 500px;
+            font-size: 20px;
+            color: #707070;
+        }
+
+        .carouselslide {
+            color: black;
+            background-color: #f9fbff;
+            padding: 83px 103px;
+            border: 1px solid #eee;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+            flex: 100%;
         }
 
         @media screen and (min-width: 425px) and (max-width: 1024px) {
@@ -306,6 +536,29 @@
                 flex: 55%;
                 position: relative;
                 margin-bottom: 66px;
+            }
+
+            .coursefeescontent .col31,
+            .col41 {
+                width: 170.333px;
+            }
+
+            .keyhighlights .points {
+                display: flex;
+                flex-flow: column wrap;
+                margin-bottom: 60px;
+            }
+
+            .keyhighlights .points .col1,
+            .col2 {
+                margin: 0;
+            }
+
+            .certificationandcontact {
+                display: grid;
+                grid-template-columns: none;
+                margin: 0 128px 0 128px;
+                grid-gap: 43px;
             }
         }
 
@@ -350,6 +603,66 @@
 
             .coursefees {
                 margin: 0 15px;
+            }
+
+            .coursefeescontent .col41 {
+                width: 174px;
+            }
+
+            .highllightssection {
+                display: flex;
+                flex-flow: row wrap;
+                margin: 0 16px;
+            }
+
+            .keyhighlights .points {
+                display: flex;
+                flex-flow: column wrap;
+                margin-bottom: 60px;
+            }
+
+            .toolscovered .icons {
+                justify-content: center;
+            }
+
+            .keyhighlights .points .col1,
+            .col2 {
+                margin: 0;
+            }
+
+            .certificationandcontact {
+                display: grid;
+                grid-template-columns: none;
+                margin: 0 15px;
+                grid-gap: 43px;
+            }
+
+            .coursedetails .head,
+            .amit22,
+            .paths {
+                margin: 0 15px !important;
+            }
+
+            .industrialprojects .head {
+                margin: 0px 15px 30px 15px;
+            }
+
+            .sectioncolumn {
+                margin: 0 15px;
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .sectioncolumn .courses1 {
+                margin: 0;
+            }
+
+            .sectioncolumn .courses2 {
+                margin: 0;
+            }
+
+            .sectioncolumn .courses3 {
+                margin: 0;
             }
         }
     </style>
@@ -456,6 +769,135 @@
                         <h2> 2:00pm - 4:00pm</h2>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="popularcourses highlights">
+        <div class="highllightssection">
+            <div class="keyhighlights">
+                <div class="head">
+                    <h2>Key Highlights</h2>
+                </div>
+                <div class="points">
+                    <div class="col1">
+                        <ul>
+                            <li>Profile Building</li>
+                            <li>Doubt Clearing Session</li>
+                            <li>Case Studies and Live Practical Project</li>
+                            <li>Complete Practical Training</li>
+                        </ul>
+                    </div>
+                    <div class="col2">
+                        <ul>
+                            <li>Dedicated Student Representative</li>
+                            <li>Experienced Trainers</li>
+                            <li>Designed for Professionals</li>
+                            <li>No Cost EMI</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="toolscovered">
+                <div class="head">
+                    <h2>Tools Covered</h2>
+                </div>
+                <div class="icons">
+                    <div>
+                        <img src="img1.png" alt="">
+                    </div>
+                    <div>
+                        <img src="img2.png" alt="">
+                    </div>
+                    <div>
+                        <img src="img3.png" alt="">
+                    </div>
+                    <div>
+                        <img src="img4.png" alt="">
+                    </div>
+                    <div>
+                        <img src="img5.png" alt="">
+                    </div>
+                    <div>
+                        <img src="img6.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="coursedetails">
+        <div class="head" style="margin: 0 128px 0 128px;">
+            <h2>Course Details</h2>
+        </div>
+        <div class="amit22"
+            style="margin: 0 128px 0 128px;font-size: 18px;letter-spacing: .23px;color: rgba(18,14,61,.8);">
+            Learn from the best industry experts across the globe.</div>
+        <div class="paths" style="margin: 0 128px 0 128px;">Paths</div>
+        <div class="certificationandcontact">
+            <div class="certification">
+                <div class="head1"><span>MERN Stack Development Certification Training Course</span></div>
+                <div class="session1">
+                    <p
+                        style="display: inline-block;font-size: 14px;letter-spacing: .22px;color: rgba(18,14,61,.35);margin-right: 30px;text-align: center;">
+                        <span style="display: block;font-size: 24px;font-weight: 500;color: #e96161;">5</span> Batches
+                    </p>
+                    <p
+                        style="display: inline-block;font-size: 14px;letter-spacing: .22px;color: rgba(18,14,61,.35);margin-right: 30px;text-align: center;">
+                        <span style="display: block;font-size: 24px;font-weight: 500;color: #e96161;">60</span> Hours
+                    </p>
+                    <button>Download syllabus</button>
+                </div>
+            </div>
+            <div class="contact">
+                <h3>Get in touch with our expert technical advisor</h3>
+                <p>Enroll in online/offline programs built with top industry standards, with dedicated mentorship and
+                    expert career guidance</p>
+                <form action="">
+                    <input type="email" placeholder="Email">
+                    <input type="text" placeholder="Phone Number">
+                    <button>Send</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="industrialprojects">
+        <div class="head">
+            <h2>Industrial Projects</h2>
+        </div>
+        <div class="sectioncolumn">
+            <div class="courses1">
+                <img src="img7.png" alt="">
+                <h4>Employee Task Tracker</h4>
+                <p>Designing and developing an Online task allocation application for employee mana...</p>
+            </div>
+            <div class="courses2">
+                <img src="img8.png" alt="">
+                <h4>Onine Ecommerce</h4>
+                <p>Customer facing ecommerce application for enquiring, requesting and buying produ...</p>
+            </div>
+            <div class="courses3">
+                <img src="img9.png" alt="">
+                <h4>CRM Application</h4>
+                <p>Customer Relationship Management software for supporting an insurance business.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="popularcourses" style="margin: 0 10px;">
+        <div class="container">
+            <div class="sectionHeading2">
+                <h1>Customer Stories</h1>
+                <p>We at Teqstories are committed in delivering the best to our customers.</p>
+            </div>
+            <div class="carouselslide">
+                <img src="https://www.teqstories.com/assets/images/person2.png" alt="">
+                <p>I took aws and devops training from teqstories. My trainer was keshav sir. He
+                    was so humble and polite and cleared all my doubts. The support team was also always there to
+                    resolve all my doubts. I wil...</p>
+                <h4 _ngcontent-qyx-c97="">Rikta Ghosh</h4>
+                <h4 _ngcontent-qyx-c97="">Team Lead at Accenture</h4>
             </div>
         </div>
     </section>
