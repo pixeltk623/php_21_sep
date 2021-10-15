@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,12 +10,14 @@
 			margin: 0px;
 			box-sizing: border-box;
 		}
+
 		header {
 			text-align: center;
 			background-color: lightgrey;
 			padding: 20px;
 			font-size: 20px;
 		}
+
 		ul {
 			list-style-type: none;
 			padding: 0;
@@ -52,10 +55,12 @@
 			width: 20%;
 			float: left;
 		}
+
 		.col-2 {
 			width: 60%;
 			float: left;
 		}
+
 		.col-3 {
 			width: 20%;
 			float: left;
@@ -69,19 +74,22 @@
 
 		.card-1 {
 			width: 100%;
-    		height: 435px;
-    		background-color: lightslategrey;
+			height: 435px;
+			background-color: lightslategrey;
 		}
+
 		.card-2 {
 			width: 100%;
-    		height: 435px;
-    		background-color: grey;
+			height: 435px;
+			background-color: grey;
 		}
+
 		.card-3 {
 			width: 100%;
-    		height: 435px;
-    		background-color: brown;
+			height: 435px;
+			background-color: brown;
 		}
+
 		footer {
 			background-color: black;
 			color: white;
@@ -92,17 +100,17 @@
 			font-size: 35px;
 		}
 
-		@media screen and (min-width: 320px) and (max-width: 480px){	
-    		/*body {
+		@media screen and (min-width: 320px) and (max-width: 480px) {
+			/*body {
     			background-color: red;
     		}*/
 
-    		ul li {
-    			float: none;
-    			text-align: center;
-    		}
+			ul li {
+				float: none;
+				text-align: center;
+			}
 
-    		.right {
+			.right {
 				float: none;
 			}
 
@@ -120,8 +128,9 @@
 		}
 	</style>
 </head>
+
 <body>
-<!-- 	<header></header>
+	<!-- 	<header></header>
 	<div></div>
 	<nav></nav>
 	<footer></footer>
@@ -160,4 +169,5 @@
 		<h2>Footer</h2>
 	</footer>
 </body>
+
 </html>
