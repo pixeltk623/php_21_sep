@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style type="text/css">
+        table {
+            margin: auto;
+        }
+
+        table tr th,
+        td {
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <form method="POST" name="myForm">
+        <table border="1" style="border-collapse: collapse; width: 500px;">
+            <tr>
+                <th>First Number</th>
+                <th>
+                    <input type="number" name="fn" id="fn">
+                    <div id="amit"></div>
+                </th>
+            </tr>
+
+            <tr>
+                <th>Second Number</th>
+                <th>
+                    <input type="number" name="sn" id="sn">
+                    <div id="amit1"></div>
+                </th>
+            </tr>
+
+            <tr>
+                <th>Operation</th>
+                <th>
+                    <select name="op" id="op">
+                        <option value="select">Select</option>
+                        <option value="+">+</option>
+                        <option value="-">-</option>
+                        <option value="*">*</option>
+                        <option value="/">/</option>
+                    </select>
+                    <div id="amit2"></div>
+                </th>
+            </tr>
+            <tr>
+                <th colspan="2">
+                    <input type="submit" name="submit"  onclick="return makeCalculator()">
+                </th>
+            </tr>
+        </table>
+    </form>
+
+    <!-- onclick="return makeCalculator()" -->
+
+    <br>
+    <br>
+    <div id="res"></div>
+
+    <br>
+    <br>
+
+    <div id="overalltotal"></div>
+
+    <script src="15oct1.js"></script>
+    
+
+
+
+
+</body>
+
+</html>
+
