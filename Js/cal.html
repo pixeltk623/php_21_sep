@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style type="text/css">
+        table {
+            margin: auto;
+        }
+
+        table tr th,
+        td {
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <form method="POST" name="myForm">
+        <table border="1" style="border-collapse: collapse; width: 500px;">
+            <tr>
+                <th>First Number</th>
+                <th>
+                    <input type="text" name="fn" id="fn">
+                    <span id="e1"></span>
+                </th>
+            </tr>
+
+            <tr>
+                <th>Second Number</th>
+                <th>
+                    <input type="text" name="sn" id="sn">
+                    <span id="e2"></span>
+                </th>
+            </tr>
+
+            <tr>
+                <th>Operation</th>
+                <th>
+                    <select name="op" id="op">
+                        <option value="">Select</option>
+                        <option value="+">+</option>
+                        <option value="-">-</option>
+                        <option value="*">*</option>
+                        <option value="/">/</option>
+                    </select>
+                    <span id="e3"></span>
+                </th>
+            </tr>
+            <tr>
+                <th colspan="2">
+                    <input type="submit" name="submit"  onclick="return makeCalculator()">
+                </th>
+            </tr>
+        </table>
+    </form>
+    <script type="text/javascript">
+        function makeCalculator() {
+            var fnum = document.getElementById("fn").value;
+            var snum = document.getElementById("sn").value;
+            var op = document.getElementById("op").value;
+
+            //console.log(fnum);
+            var result;
+            if (fnum=='') {
+                //console.log('Fnum Can Not be blank');
+                document.getElementById("e1").innerHTML = "Fnum Can Not be blank";
+                document.getElementById("e1").style.color = "red";
+            } else {
+
+                if (!isNaN(fnum)) {
+                    document.getElementById("e1").innerHTML = "";
+                } else {
+                    document.getElementById("e1").innerHTML = "Number is Invalid";
+                    document.getElementById("e1").style.color = "red";
+                }
+            }
+
+            if (snum=='') {
+                document.getElementById("e2").innerHTML = "SNum Can Not be blank";
+                document.getElementById("e2").style.color = "red";
+            } else {
+
+                if (!isNaN(snum)) {
+                    document.getElementById("e2").innerHTML = "";
+                } else {
+                document.getElementById("e2").innerHTML = "SNum Can Not be blank";
+                document.getElementById("e2").style.color = "red";
+                }
+            }
+
+            if (op=='') {
+                document.getElementById("e3").innerHTML = "SNum Can Not be blank";
+                document.getElementById("e3").style.color = "red";
+            } else {
+                document.getElementById("e3").innerHTML = "";
+            }
+
+
+            if (op!='' && !isNaN(snum) && !isNaN(fnum)) {
+                
+                finalNumber1 = parseInt(fnum);
+                finalNumber2 = parseInt(snum);
+
+                switch(op) {
+                    case '+':
+                        result = finalNumber1+finalNumber2;
+                        break;
+                    case '-':
+                        result = finalNumber1-finalNumber2;
+                        break;
+                    case '*':
+                        result = finalNumber1*finalNumber2;
+                        break;
+                    case '/':
+                        result = finalNumber1/finalNumber2;
+                        break;
+
+                }
+
+                console.log(result)
+
+            }
+
+            return false;
+        }
+    </script>
+</body>
+
+</html>
+
