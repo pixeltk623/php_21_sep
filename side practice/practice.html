@@ -1,12 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
+  <div id="container">
+    <div id="wall">
+      <form action="" name="myForm" onsubmit="return validation()" method="POST" class="bg-light">
+
+        <h1 style="text-align: center; font-size: 52px; color: bisque"><u>INTERNSHIP FORM</u></h1><br><br>
+        <p>FIRST &nbsp;NAME :&nbsp;&nbsp;&nbsp;<input type="text" id="Fname" placeholder="First Name......"
+            autocomplete="off">
+          <span id="fname" class="text-danger">
+            <br><br>
+          </span> LAST &nbsp;NAME :&nbsp;&nbsp;&nbsp;<input type="text" id="Lname" placeholder="Last Name........"
+            autocomplete="off">
+          <span id="lname" class="text-danger"></span>
+        </p>
+
+        <p>
+          NAME &nbsp;OF &nbsp;THE &nbsp;INSTITUTE :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <br><br>
+          <textarea name="institute" rows="3" cols="30" placeholder="Institute name...">
+                            </textarea>
+          <span id="InstituteE" class="text-danger"></span> DATE OF BIRTH :&nbsp;&nbsp;&nbsp;<input type="date" id="dob"
+            autocomplete="off">
+          <span id="DateOfBirth" class="text-danger"></span>
+        </p>
+        <p>
+          <input type="submit" name="submit" value="SUBMIT" class="btn btn-success"
+            style="padding: 20px; font-size: 28px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+          <input type="reset" name="reset" value="RESET" class="btn btn-primary"
+            style="padding: 20px; font-size: 28px;">
+        </p>
+
+      </form>
+      <br><br><br><br><br><br>
+    </div>
+  </div>
+
   <script src="practice.js"></script>
 </body>
+
 </html>
+
+<div id="amit"></div>
+<div id="amit1"></div>
+<div id="amit2"></div>

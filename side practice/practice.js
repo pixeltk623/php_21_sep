@@ -1,29 +1,29 @@
-// var city = "Delhi";
-// console.log(city);
+function validation() {
+    var first_name = document.getElementById('Fname').value;
+    var last_name = document.getElementById('Lname').value;
 
-let city = "mumbai";
-{
-    let city = "UP";
-    // console.log(city);
+    var Institute_name = document.myForm.institute.value;
+    var DOB = document.getElementById('dob').value;
+
+    if (first_name == "") {
+        document.getElementById('fname').innerHTML = "** Please fill this field";
+        return false;
+    } 
+    
+    if ((last_name == "") && (first_name != "")) {
+        document.getElementById('lname').innerHTML = "** Please fill this field";
+        document.getElementById('fname').innerHTML = "";
+        return false;
+    }
+
+    if ((Institute_name == '') && (last_name != "")) {
+        document.getElementById('InstituteE').innerHTML = "** Please fill this field";
+        document.getElementById('branchE').innerHTML = "";
+        return false;
+    }
+
+    if (!DOB.value) {
+        document.getElementById('DateOfBirth').innerHTML = "Please enter a valid birthday";
+        return false;
+    }
 }
-console.log(city);
-
-let amit = "gsdg";
-console.log(typeof amit);
-
-let amit1 = 65;
-console.log(typeof(amit1));
-
-let arry = [1, 2, 3];
-console.log(arry);
-
-let date = new Date();
-console.log(date);
-
-let i = 75;
-i = i.toString();
-console.log(i);
-
-let yot = "6";
-let you = 5;
-console.log(yot + you);

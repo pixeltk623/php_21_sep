@@ -76,7 +76,7 @@ function makeCalculator() {
 	// console.log(typeof(fnum))
 	var result
 
-	switch(op) {
+	switch (op) {
 		case '+':
 			result = fnum + snum;
 			break;
@@ -96,7 +96,7 @@ function makeCalculator() {
 	var html = "<table border='1' style='border-collapse: collapse; width: 500px;'>\
 		<tr>\
 			<th>Result</th>\
-			<td>"+result+"</td>\
+			<td>"+ result + "</td>\
 		</tr>\
 	</table>"
 

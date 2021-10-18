@@ -474,7 +474,7 @@
             width: 100%;
             max-width: 1140px;
             margin: 0 auto;
-            flex-direction: column;
+            flex-direction: row;
             box-sizing: border-box;
             display: flex;
         }
@@ -504,6 +504,112 @@
             align-items: center;
             gap: 24px;
             flex: 100%;
+        }
+
+        .custstories {
+            width: 100%;
+            max-width: 1140px;
+            margin: 0 auto;
+            flex-direction: column;
+            box-sizing: border-box;
+            display: flex;
+        }
+
+        .TeqstoriesExperience .experiences {
+            display: flex;
+            flex-flow: column wrap;
+            margin: 0 128px;
+        }
+
+        .TeqstoriesExperience .imagesizer {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+        }
+
+        .TeqstoriesExperience .mainimage {
+            flex: 100%;
+            max-width: 100%;
+        }
+
+        .TeqstoriesExperience {
+            margin: 60px 0;
+        }
+
+        .TeqstoriesExperience .mainimage img {
+            margin: 40px 0 0 0;
+            width: 100%;
+        }
+
+        .demosessions {
+            margin: 30px 128px;
+            border-radius: 25px;
+            border: 1px solid #d0d6e2;
+            background-color: #f9fbff;
+            padding: 59px 73px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            gap: 123px;
+        }
+
+        .demosessions .free,
+        .support24,
+        .job {
+            flex: 23%;
+        }
+
+        .demosessions h3 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #120e3d;
+            margin-bottom: 10px;
+        }
+
+        .footer {
+            background-color: #191919;
+            padding: 60px 0;
+            color: #fff;
+            margin: 60px 0 0 0;
+        }
+
+        .footercontainer {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            width: 100%;
+            max-width: 1140px;
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+
+        .footercontent h3 {
+            margin-bottom: 15px;
+        }
+
+        .footercontent a {
+            margin-bottom: 10px;
+            color: #a2a2a2;
+            text-decoration: none;
+        }
+
+        .followus a {
+            display: inline-block;
+            background-color: #353535;
+            padding: 4px;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            margin-right: 15px;
+            margin-bottom: 15px;
+        }
+
+        .followus img {
+            width: 20px;
+            height: 20px;
         }
 
         @media screen and (min-width: 425px) and (max-width: 1024px) {
@@ -559,6 +665,10 @@
                 grid-template-columns: none;
                 margin: 0 128px 0 128px;
                 grid-gap: 43px;
+            }
+
+            .footercontainer{
+                padding: 0 25px;
             }
         }
 
@@ -663,6 +773,23 @@
 
             .sectioncolumn .courses3 {
                 margin: 0;
+            }
+
+            .TeqstoriesExperience .experiences {
+                margin: 0 15px;
+            }
+
+            .demosessions {
+                margin: 30px 15px;
+            }
+
+            .footercontainer {
+                padding: 0 15px;
+            }
+
+            .footercontent {
+                flex: 100% !important;
+                margin-bottom: 26px;
             }
         }
     </style>
@@ -886,7 +1013,7 @@
     </section>
 
     <section class="popularcourses" style="margin: 0 10px;">
-        <div class="container">
+        <div class="container custstories">
             <div class="sectionHeading2">
                 <h1>Customer Stories</h1>
                 <p>We at Teqstories are committed in delivering the best to our customers.</p>
@@ -898,6 +1025,92 @@
                     resolve all my doubts. I wil...</p>
                 <h4 _ngcontent-qyx-c97="">Rikta Ghosh</h4>
                 <h4 _ngcontent-qyx-c97="">Team Lead at Accenture</h4>
+            </div>
+        </div>
+    </section>
+
+    <section class="TeqstoriesExperience">
+        <div class="experiences">
+            <div class="head">
+                <h2>Teqstories Experience</h2>
+            </div>
+            <div class="imagesizer">
+                <div class="mainimage">
+                    <img src="https://www.teqstories.com/assets/images/teqExp.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="demosessions">
+        <div class="free">
+            <h3>Free Demo Sessions</h3>
+            <p>Get a Free online demo sessions
+                Register Now</p>
+        </div>
+        <div class="support24">
+            <h3>24x7 Support</h3>
+            <p>Our support team will be there for you around-the-clock to help you with doubts.</p>
+        </div>
+        <div class="job">
+            <h3>Job Assistance</h3>
+            <p>Our team will guide you to your dream job</p>
+        </div>
+    </section>
+
+    <section class=" popularcourses footer">
+        <div class="container footercontainer">
+            <div class="followus footercontent" style="flex: 10%;">
+                <h3>Follow us</h3>
+                <a target="_black"><img src="https://www.teqstories.com/assets/images/fb_icon.png" alt="facebook"></a>
+                <a target="_black"><img src="https://www.teqstories.com/assets/images/twitter_icon.png"
+                        alt="twitter"></a>
+                <a target="_black"><img src="https://www.teqstories.com/assets/images/youtube_icon.png"
+                        alt="youtube"></a>
+                <a target="_black"><img src="https://www.teqstories.com/assets/images/linkedin_icon.png"
+                        alt="linkedin"></a>
+                <a target="_black"><img src="https://www.teqstories.com/assets/images/insta_icon.png"
+                        alt="instagram"></a>
+                <a target="_black"><img src="https://www.teqstories.com/assets/images/whatsapp-32.png"
+                        alt="whatsapp"></a>
+            </div>
+
+            <div class="footercontent" style="flex: 12%;display: flex;flex-direction: column;">
+                <h3>Company</h3>
+                <a> About us </a>
+                <a> Careers </a>
+                <a> Contact us </a>
+            </div>
+
+            <div class="footercontent" style="flex: 26%;display: flex;flex-direction: column;">
+                <h3>Trending Certification Courses</h3>
+                <a href="">Machine Learning Certification</a>
+                <a href="">Python Certification Course</a>
+                <a href="">Data Scientist Training</a>
+                <a href="">Cloud Certification</a>
+                <a href="">Angular Certification</a>
+                <a href="">Azure Cloud Certification</a>
+                <a href="">Web Development Training</a>
+                <a href="">Aws Solution Architect Training </a>
+                <a href="">Java Certification Training</a>
+            </div>
+
+            <div class="footercontent" style="flex: 30%;display: flex;flex-direction: column;">
+                <h3>&nbsp;</h3>
+                <a href="">Node js certification training </a>
+                <a href="">Devops professional certification </a>
+                <a href="">Java certification training </a>
+                <a href="">Spring Boot training </a>
+                <a href="">Mean stack development certification </a>
+                <a href="">Mern stack development certification </a>
+                <a href="">PHP certification training </a>
+                <a href="">Software testing master training </a>
+                <a href="">Jenkins certification training </a>
+            </div>
+
+            <div class="footercontent" style="flex-basis: 12%;">
+                <h3>Work with us</h3>
+                <a> Become an instructor </a>
             </div>
         </div>
     </section>
