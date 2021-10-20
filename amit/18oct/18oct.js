@@ -1,5 +1,5 @@
 
-// (1 to 100 prime numbers)
+//(1 to 100 prime numbers)
 // let count = 0;
 // let L1 = "";   
 
@@ -11,11 +11,13 @@
 //     } 
 //     if (count == 2) {
 //         L1 += " " + i + " ";
-//         console.log(L1);
+//         //console.log(L1);
 //     }
 
 //     count = 0;
 // }
+
+// console.log(L1);
 // document.getElementById("primenumber").innerHTML = L1;
 
 // ---------------------------------------------------------------------------------------------------------------
