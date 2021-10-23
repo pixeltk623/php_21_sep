@@ -46,9 +46,9 @@
 // var rev = 0;
 
 // while(number!=0) {
-// 	rem = number%10; // 4 // 5 
+// 	rem = number%10; // 4 // 5 // 1
 // 	rev = rev*10 + rem; // 0 + 4 // 4 // 40 + 5 // 45 // 450 + 1 // 451
-// 	number = parseInt(number/10)
+// 	number = parseInt(number/10) // 15 // 1 // 0
 // }
 
 // console.log(rev);
@@ -110,22 +110,21 @@
 // var html = '';
 
 // html += '<table style="border-collapse: collapse; width: 100%;" border="1">';
-// for(var i = 1; i<=8; i++) {
-// 	html +=    '<tr>';
-// 	for(var j = 1; j<=8; j++) {
-// 		var sum = i + j
+// for (var i = 1; i <= 8; i++) {
+//     html += '<tr>';
+//     for (var j = 1; j <= 8; j++) {
+//         var sum = i + j
 
-// 		if (sum%2==0) {
-// 			html += '<td style="height: 80px; background-color: black;"></td>';
-// 		} else {
-// 			html += '<td style="height: 80px;"></td>';
-// 		}
+//         if (sum % 2 == 0) {
+//             html += '<td style="height: 80px; background-color: black;"></td>';
+//         } else {
+//             html += '<td style="height: 80px;"></td>';
+//         }
 
-		
-// 	}
-// 	html +=    '</tr>';
+//     }
+//     html += '</tr>';
 // }
-// html +='</table>'
+// html += '</table>'
 
 // document.getElementById("chess").innerHTML = html;
 
