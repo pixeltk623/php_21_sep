@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+	<style>
+		span{
+			color: red;
+		}
+	</style>
+</head>
+<body>
+    <form method="POST" enctype="multipart/form-data">
+		
+		<label>Name</label>
+		<input type="text" name="name" id="name">
+		<span id="e1"></span>
+		<br><br>
+
+		<label>Email</label>
+		<input type="email" name="email" id="email">
+		<span id="e2"></span>
+		<br><br>
+
+		<label>Gender</label>
+		<input type="radio" name="gender" value="Male">Male
+		<input type="radio" name="gender" value="Female">Female
+		<span id="e3"></span>
+		<br><br>
+
+		<label>Hobby</label>
+		<input type="checkbox" name="hobby[]" value="Cricket">Cricket
+		<input type="checkbox" name="hobby[]" value="Football">Football
+		<input type="checkbox" name="hobby[]" value="Tenis">Tenis
+		<span id="e4"></span>
+		<br><br>
+		<label>City</label>
+		<select id="city">
+			<option value="select" name="city[]">select</option>
+			<option value="Vadodara" name="city[]">Vadodara</option>
+			<option value="Surat" name="city[]">Surat</option>
+			<option value="Anand" name="city[]">Anand</option>
+		</select>
+		<span id="e5"></span>
+		<br><br>
+		<label>File</label>
+		<input type="file" name="fileUpload" id="fileUpload">
+		<span id="e6"></span>
+		<br><br>
+
+		<input type="submit" name="submit" onclick="return formCheckValidation()">
+	</form>
+    <script src="22oct.js"></script>
+</body>
+</html>
