@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		span {
+			color: red; 
+		}
+	</style>
+</head>
+<body>
+	<form method="post">
+		<label>Name</label>
+		<input type="text" name="name" id="name">
+		<span id="e1"></span>
+		<br><br>
+
+		<label>Gender</label>
+		<input type="radio" name="gender" value="Male">Male
+		<input type="radio" name="gender" value="Female">Female
+		<span id="e3"></span>
+		<br><br>
+
+		<label>Hobby</label>
+		<input type="checkbox" name="hobby[]" value="Cricket">Cricket
+		<input type="checkbox" name="hobby[]" value="Football">Football
+		<input type="checkbox" name="hobby[]" value="Tenis">Tenis
+		<span id="e4"></span>
+		<br><br>
+
+		<input type="submit" name="submit" onclick="return formCheckValidation()">
+	</form>
+	<br><br>
+	<div id="res"></div>
+
+	<script type="text/javascript">
+
+		// {
+		// 	let i = 0;
+
+		// 	console.log(i);
+		// }
+
+		// console.log(i);
+
+		// for (let i = 0; i <= 10; i++) {
+		// 	console.log(i);
+		// }
+
+		// console.log(i);
+
+
+		function formCheckValidation() {
+			let name = document.getElementById("name").value;
+			let genders = document.getElementsByName("gender");
+    		let hobby = document.getElementsByName("hobby[]");
+    		let genderValue=  '';
+    		let hobbyValue = [];
+    		if (name == "") {
+		        document.getElementById("e1").innerHTML = "fill the name";
+		    } else {
+		        document.getElementById("e1").innerHTML = ""; 
+		    }
+
+		    for(let i=0; i<genders.length; i++) {
+
+		    	if(genders[i].checked) {
+		    		genderValue = genders[i].value;	
+		    	}
+
+		    }
+
+		    if (genderValue=='') {
+		    	document.getElementById("e3").innerHTML = "select your gender";
+		    } else {
+		    	document.getElementById("e3").innerHTML = "";
+		    }
+
+		    for(let i = 0; i<hobby.length; i++) {
+		    	if(hobby[i].checked) {
+		    		hobbyValue.push(hobby[i].value);
+		    	}
+		    }
+
+		    // console.log(hobbyValue);
+
+		    if(hobbyValue.length>0) {
+
+		    	if (hobbyValue.length==1) {
+		    		document.getElementById("e4").innerHTML = "atleast two hobby must be selected";
+		    	} else {
+		    		document.getElementById("e4").innerHTML = "";
+		    	}
+
+		    } else {
+		    	document.getElementById("e4").innerHTML = "select your hobby";
+		    }
+
+		    if (name != "" && genderValue != '' && hobbyValue.length>1) {
+
+		    	let html = "";
+
+		    	html += "<table width='500' border='1'>";
+		    		html += "<tr>";
+		    			html += "<td>Name</td>";
+		    			html += "<td>"+name+"</td>";
+		    		html += "</tr>";
+		    		html += "<tr>";
+		    			html += "<td>Gender</td>";
+		    			html += "<td>"+genderValue+"</td>";
+		    		html += "</tr>";
+
+		    		html += "<tr>";
+		    			html += "<td>Hobby</td>";
+		    			html += "<td>"+hobbyValue+"</td>";
+		    		html += "</tr>";
+		    	html += "</table>";
+
+		    	document.getElementById("res").innerHTML = html;
+
+		    	document.getElementById("name").value = "";
+
+		    } 
+
+
+
+    		return false;
+		}
+	</script>
+</body>
+</html>

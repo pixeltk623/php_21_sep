@@ -1,4 +1,13 @@
 
+
+// File uploaded
+
+// Size = > 100 - 500KB 
+// Error = > issue with size 
+// Exyr = jpg and png 
+
+
+
 function formCheckValidation() {
 
     var name = document.getElementById("name").value;

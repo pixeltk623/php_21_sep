@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		span {
+			color: red; 
+		}
+	</style>
+</head>
+<body>
+
+
+<!-- 	API 
+
+	GET METHOD 
+	POST METHOD 
+
+	 -->
+
+
+	<form method="post">
+		<label>Name</label>
+		<input type="text" name="name" id="name" onkeyup="getNameValue()">
+		<span id="e1"></span>
+		<br><br>
+
+		<label>Email</label>
+		<input type="email" name="email" id="email" onkeyup="getEmailValue()">
+		<span id="e2"></span>
+		<br><br>
+
+		<label>Gender</label>
+		<input type="radio" name="gender" value="Male">Male
+		<input type="radio" name="gender" value="Female">Female
+		<span id="e3"></span>
+		<br><br>
+
+		<label>Hobby</label>
+		<input type="checkbox" name="hobby[]" value="Cricket" onclick="getAllHobby()">Cricket
+		<input type="checkbox" name="hobby[]" value="Football" onclick="getAllHobby()">Football
+		<input type="checkbox" name="hobby[]" value="Tenis" onclick="getAllHobby()">Tenis
+		<span id="e4"></span>
+		<br><br>
+
+		<input type="submit" name="submit" disabled>
+	</form>
+	<br><br>
+	<div id="res"></div>
+
+	<script type="text/javascript">
+		const listOfEmail = ["s@gmail.com", "a@gmail.com"]
+
+		function getNameValue() {
+			const name = document.getElementById('name').value;
+
+			if(name=='') {
+				document.getElementById("e1").innerHTML = "fill the name";
+			} else {
+				if (name.length>5) {
+					document.getElementById("e1").innerHTML = ""; 
+				} else {
+					document.getElementById("e1").innerHTML = "Name Length Must be 5 Char"; 
+				}	
+			}
+		}
+
+		function getAllHobby() {
+			let hobby = document.getElementsByName("hobby[]");
+
+			console.log(hobby);
+		}
+
+		// function getEmailValue() {
+		// 	const email = document.getElementById('email').value;
+
+		// 	const found = listOfEmail.includes(email);
+
+		// 	console.log(found);
+
+		// 	if (found) {
+		// 		document.getElementById("e2").innerHTML = "Email is Already Exits";
+		// 		document.getElementById("e2").style.color = "red";
+		// 	} else {
+		// 		document.getElementById("e2").innerHTML = "Email is Availbale";
+		// 		document.getElementById("e2").style.color = "green";
+		// 	}
+
+		// 	// if(email=='') {
+		// 	// 	document.getElementById("e2").innerHTML = "fill the Email";
+		// 	// } else {
+		// 	// 	if (email.length>5) {
+		// 	// 		document.getElementById("e2").innerHTML = ""; 
+		// 	// 	} else {
+		// 	// 		document.getElementById("e2").innerHTML = "Email Length Must be 5 Char"; 
+		// 	// 	}	
+		// 	// }
+		// }
+
+	</script>
+
+</body>
+</html>
