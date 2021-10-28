@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript API</title>
+	<style type="text/css">
+		table tr th,td {
+			padding: 10px;
+		}
+	</style>
+</head>
+<body>
+
+	<h1 style="text-align: center;">JavaScript API</h1>
+	<div id="result"></div>
+
+	<script type="text/javascript">
+
+		//https://jsonplaceholder.typicode.com/
+		
+		function getAllDataFromAPI() {
+
+    		var xmlHttp = new XMLHttpRequest();
+    		xmlHttp.open("GET", "https://jsonplaceholder.typicode.com/posts", false ); // false for synchronous request
+    		xmlHttp.send( null );
+
+    		return xmlHttp.responseText;
+		}
+
+		let allData = JSON.parse(getAllDataFromAPI())
+
+		console.log(allData);
+
+		let table = "";
+
+		table += "<table style='border-collapse: collapse;' width='100%' border='1px solid black'>";
+			table += "<tr>";
+				table += "<th>Sr.No</th>";
+				table += "<th>User Id</th>";
+				table += "<th>Title</th>";
+				table += "<th>Body</th>";
+			table += "</tr>";
+			for(let i = 0; i<allData.length; i++) {
+				table += "<tr>";
+					table += "<td>"+(i+1)+"</td>";
+					table += "<td>"+allData[i].userId+"</td>";
+					table += "<td>"+allData[i].title+"</td>";
+					table += "<td>"+allData[i].body+"</td>";
+				table += "</tr>";
+			}
+		table += "</table>";
+
+		document.getElementById('result').innerHTML = table;
+		// console.log(allData.length);
+
+		function searchFlight() {
+			const data = "q=English%20is%20hard%2C%20but%20detectably%20so";
+
+			const xhr = new XMLHttpRequest();
+			xhr.withCredentials = true;
+
+			xhr.addEventListener("readystatechange", function () {
+				if (this.readyState === this.DONE) {
+					console.log(this.responseText);
+				}
+			});
+
+			xhr.open("POST", "https://google-translate1.p.rapidapi.com/language/translate/v2/detect");
+			xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+			xhr.setRequestHeader("accept-encoding", "application/gzip");
+			xhr.setRequestHeader("x-rapidapi-host", "google-translate1.p.rapidapi.com");
+			xhr.setRequestHeader("x-rapidapi-key", "6af67cbd99msh530a5aca1fdf9a3p16bc13jsnb894dbf59366");
+
+			xhr.send(data);
+		}
+
+		searchFlight()
+	</script>
+</body>
+</html>
