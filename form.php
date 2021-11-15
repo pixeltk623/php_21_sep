@@ -18,7 +18,7 @@
 
 			<label>Range</label>
 			<input type="range" name="" value="2" min="1" max="5">
-			<br><br>
+			<br><br> 
 			<label>Progress</label>
 			<progress value="10" max="100"></progress>
 			<br><br>

@@ -101,6 +101,5 @@ function makeCalculator() {
 	</table>"
 
 	document.getElementById("res").innerHTML = html;
-
 	return false;
 }

@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>JavaScript API</title>
 	<style type="text/css">
-		table tr th,td {
+		table tr th,
+		td {
 			padding: 10px;
 		}
 	</style>
 </head>
+
 <body>
 
 	<h1 style="text-align: center;">JavaScript API</h1>
@@ -16,14 +19,15 @@
 	<script type="text/javascript">
 
 		//https://jsonplaceholder.typicode.com/
-		
+
 		function getAllDataFromAPI() {
 
-    		var xmlHttp = new XMLHttpRequest();
-    		xmlHttp.open("GET", "https://jsonplaceholder.typicode.com/posts", false ); // false for synchronous request
-    		xmlHttp.send( null );
+			var xmlHttp = new XMLHttpRequest();
+			xmlHttp.open("GET", "https://jsonplaceholder.typicode.com/posts", false); // false for synchronous request
+			xmlHttp.send(null);
 
-    		return xmlHttp.responseText;
+			console.log(xmlHttp.responseText);
+			return xmlHttp.responseText;
 		}
 
 		let allData = JSON.parse(getAllDataFromAPI())
@@ -33,20 +37,20 @@
 		let table = "";
 
 		table += "<table style='border-collapse: collapse;' width='100%' border='1px solid black'>";
+		table += "<tr>";
+		table += "<th>Sr.No</th>";
+		table += "<th>User Id</th>";
+		table += "<th>Title</th>";
+		table += "<th>Body</th>";
+		table += "</tr>";
+		for (let i = 0; i < allData.length; i++) {
 			table += "<tr>";
-				table += "<th>Sr.No</th>";
-				table += "<th>User Id</th>";
-				table += "<th>Title</th>";
-				table += "<th>Body</th>";
+			table += "<td>" + (i + 1) + "</td>";
+			table += "<td>" + allData[i].userId + "</td>";
+			table += "<td>" + allData[i].title + "</td>";
+			table += "<td>" + allData[i].body + "</td>";
 			table += "</tr>";
-			for(let i = 0; i<allData.length; i++) {
-				table += "<tr>";
-					table += "<td>"+(i+1)+"</td>";
-					table += "<td>"+allData[i].userId+"</td>";
-					table += "<td>"+allData[i].title+"</td>";
-					table += "<td>"+allData[i].body+"</td>";
-				table += "</tr>";
-			}
+		}
 		table += "</table>";
 
 		document.getElementById('result').innerHTML = table;
@@ -76,4 +80,5 @@
 		searchFlight()
 	</script>
 </body>
+
 </html>
