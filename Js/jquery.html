@@ -1,203 +1,207 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title></title>
 	<!-- <script src="jquery3.min.js"></script> -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<style type="text/css">
-		table tr th,td {
+		table tr th,
+		td {
 			padding: 10px;
 
 		}
 	</style>
 </head>
+
 <body>
 
-<!-- <button type="button">Test</button>
+	<!-- <button type="button">Test</button>
 
 <button type="button" class="test">Test Class</button>
 
 <button type="button" id="test">Test Id</button> -->
 
-<!-- <button type="button" class="button" value="5">Edit5</button>
+	<!-- <button type="button" class="button" value="5">Edit5</button>
 <button type="button" class="button" value="6">Edit6</button>
 <button type="button" class="button" value="7">Edit7</button>
 <button type="button" class="button" value="8">Edit8</button>
 <button type="button" class="button" value="9">Edit9</button> -->
 
 
-<!-- <div id="test"></div>
+	<!-- <div id="test"></div>
 
 <input type="text" name="name" id="name">
 
 <button type="button">SET</button> -->
 
 
-<br><br>
+	<br><br>
 
-<input type="range" name="" value="2000" min="1000" max="2000" step="200" id="range">
-<br>
-<select id="min">
-	
-</select>
+	<input type="range" name="" value="2000" min="1000" max="2000" step="200" id="range">
+	<br>
+	<select id="min">
 
-<select id="max">
-	
-</select>
+	</select>
 
-<br><br>
-<div id="myTable"></div>
+	<select id="max">
 
-<script type="text/javascript">
-	$(document).ready(function(){
-		
-		let allItems = [
-			{pname: "Product1", price: 1000},
-			{pname: "Product1", price: 1200},
-			{pname: "Product1", price: 1400},
-			{pname: "Product1", price: 1450},
-			{pname: "Product1", price: 1600},
-			{pname: "Product1", price: 1700},
-			{pname: "Product1", price: 1750},
-			{pname: "Product1", price: 1800},
-			{pname: "Product1", price: 1950},
-			{pname: "Product1", price: 2000},
-		]
+	</select>
 
-		htmlOptionMin = '';
-		for(let priceMin = 1000; priceMin<=2000;) {
+	<br><br>
+	<div id="myTable"></div>
 
-			htmlOptionMin += "<option value='"+priceMin+"'>"+priceMin+"</option>";
+	<script type="text/javascript">
+		$(document).ready(function () {
 
-			priceMin = priceMin + 200;
-		}
+			let allItems = [
+				{ pname: "Product1", price: 1000 },
+				{ pname: "Product1", price: 1200 },
+				{ pname: "Product1", price: 1400 },
+				{ pname: "Product1", price: 1450 },
+				{ pname: "Product1", price: 1600 },
+				{ pname: "Product1", price: 1700 },
+				{ pname: "Product1", price: 1750 },
+				{ pname: "Product1", price: 1800 },
+				{ pname: "Product1", price: 1950 },
+				{ pname: "Product1", price: 2000 },
+			]
 
-		//console.log(htmlOptionMax);
-		$("#min").html(htmlOptionMin);
+			htmlOptionMin = '';
+			for (let priceMin = 1000; priceMin <= 2000;) {
 
+				htmlOptionMin += "<option value='" + priceMin + "'>" + priceMin + "</option>";
 
-
-		htmlOptionMax = '';
-		for(let priceMax = 1000; priceMax<=2000;) {
-			
-			if(priceMax==2000) {
-				var selected = "selected";
-			} else {
-				selected = '';
+				priceMin = priceMin + 200;
 			}
 
-			htmlOptionMax += "<option value='"+priceMax+"' "+selected+">"+priceMax+"</option>";
-
-			priceMax = priceMax + 200;
-		}
-
-		//console.log(htmlOptionMax);
-		$("#max").html(htmlOptionMax);
-
-		let html = '';
-
-		html += "<table border='1' style='border-collapse: collapse;' width='100%'>";
-			html += "<tr>";
-				html += "<th>Name</th>";
-				html += "<th>Price</th>";
-			html += "</tr>";
-
-			for (var i = 0; i < allItems.length; i++) {
-			html += "<tr>";
-				html += "<td>"+allItems[i].pname+"</td>";
-				html += "<td>"+allItems[i].price+"</td>";
-			html += "</tr>";
-			}
-		html += "</table>";
-
-		$("#myTable").html(html);
+			//console.log(htmlOptionMax);
+			$("#min").html(htmlOptionMin);
 
 
-		$(document).on("change", "#range", function(){
 
-			var priceSelected = $(this).val()
+			htmlOptionMax = '';
+			for (let priceMax = 1000; priceMax <= 2000;) {
 
-			console.log(priceSelected);
-			htmlOptionMaxChange = '';
-			for(let priceMaxChange = 1000; priceMaxChange<=priceSelected;) {
-				
-				if(priceMaxChange==priceSelected) {
+				if (priceMax == 2000) {
 					var selected = "selected";
 				} else {
 					selected = '';
 				}
 
-				htmlOptionMaxChange += "<option value='"+priceMaxChange+"' "+selected+">"+priceMaxChange+"</option>";
+				htmlOptionMax += "<option value='" + priceMax + "' " + selected + ">" + priceMax + "</option>";
 
-				priceMaxChange = priceMaxChange + 200;
+				priceMax = priceMax + 200;
 			}
 
 			//console.log(htmlOptionMax);
-			$("#max").html(htmlOptionMaxChange);
+			$("#max").html(htmlOptionMax);
 
+			let html = '';
 
+			html += "<table border='1' style='border-collapse: collapse;' width='100%'>";
+			html += "<tr>";
+			html += "<th>Name</th>";
+			html += "<th>Price</th>";
+			html += "</tr>";
 
-			htmlOptionMinChange = '';
-			for(let priceMinChange = 1000; priceMinChange<priceSelected;) {
-
-				htmlOptionMinChange += "<option value='"+priceMinChange+"'>"+priceMinChange+"</option>";
-
-				priceMinChange = priceMinChange + 200;
+			for (var i = 0; i < allItems.length; i++) {
+				html += "<tr>";
+				html += "<td>" + allItems[i].pname + "</td>";
+				html += "<td>" + allItems[i].price + "</td>";
+				html += "</tr>";
 			}
+			html += "</table>";
 
-			//console.log(htmlOptionMax);
-			$("#min").html(htmlOptionMinChange);
-
-
-
-			let maxPrice = priceSelected;
-			let minPrice = $("#min").val()
-
-			console.log(maxPrice, minPrice);
+			$("#myTable").html(html);
 
 
+			$(document).on("change", "#range", function () {
+
+				var priceSelected = $(this).val()
+
+				console.log(priceSelected);
+				htmlOptionMaxChange = '';
+				for (let priceMaxChange = 1000; priceMaxChange <= priceSelected;) {
+
+					if (priceMaxChange == priceSelected) {
+						var selected = "selected";
+					} else {
+						selected = '';
+					}
+
+					htmlOptionMaxChange += "<option value='" + priceMaxChange + "' " + selected + ">" + priceMaxChange + "</option>";
+
+					priceMaxChange = priceMaxChange + 200;
+				}
+
+				//console.log(htmlOptionMax);
+				$("#max").html(htmlOptionMaxChange);
+
+
+
+				htmlOptionMinChange = '';
+				for (let priceMinChange = 1000; priceMinChange < priceSelected;) {
+
+					htmlOptionMinChange += "<option value='" + priceMinChange + "'>" + priceMinChange + "</option>";
+
+					priceMinChange = priceMinChange + 200;
+				}
+
+				//console.log(htmlOptionMax);
+				$("#min").html(htmlOptionMinChange);
+
+
+
+				let maxPrice = priceSelected;
+				let minPrice = $("#min").val()
+
+				console.log(maxPrice, minPrice);
+
+
+			});
+
+			//console.log(html)
+
+			// $(document).on("click", "button", function() {
+			// 	console.log('Hello');
+			// })
+
+			// $(document).on("click", ".test", function() {
+
+			// 	console.log('Hello');
+			// });
+
+			// $(document).on("click", "#test", function() {
+			// 	console.log('Hello');
+			// })
+
+
+			// $(document).on("click", ".button", function() {
+
+
+			// 	console.log( $(".button").val() );
+
+			// });
+
+			// $(document).on("click", ".button", function() {
+
+			// 	//console.log( $(this).val() );
+
+			// 	// $(this).hide()
+
+			// })
+
+			$(document).on("click", "button", function () {
+				//$("#test").text("Hello This is Kumar");
+				//$("#test").html("<h1>Hello This is Kumar</h1>");
+
+				//console.log( $("#name").val() );
+
+				//console.log( $("#name").val(5) );
+			});
 		});
-
-		//console.log(html)
-
-		// $(document).on("click", "button", function() {
-		// 	console.log('Hello');
-		// })
-
-		// $(document).on("click", ".test", function() {
-
-		// 	console.log('Hello');
-		// });
-
-		// $(document).on("click", "#test", function() {
-		// 	console.log('Hello');
-		// })
-
-
-		// $(document).on("click", ".button", function() {
-
-
-		// 	console.log( $(".button").val() );
-
-		// });
-
-		// $(document).on("click", ".button", function() {
-
-		// 	//console.log( $(this).val() );
-
-		// 	// $(this).hide()
-
-		// })
-
-		$(document).on("click", "button", function() {
-			//$("#test").text("Hello This is Kumar");
-			//$("#test").html("<h1>Hello This is Kumar</h1>");
-
-			//console.log( $("#name").val() );
-
-			//console.log( $("#name").val(5) );
-		});
-	});
-</script>
+	</script>
 </body>
+
 </html>
