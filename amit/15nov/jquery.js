@@ -77,6 +77,7 @@ $(document).ready(function () {
 
         //     if (priceMaxChange == priceSelected) {
         //         var selected = "selected";
+
         //     } else {
         //         selected = '';
         //     }
@@ -182,4 +183,6 @@ $(document).ready(function () {
 
         //console.log( $("#name").val(5) );
     });
+    
+    
 });
