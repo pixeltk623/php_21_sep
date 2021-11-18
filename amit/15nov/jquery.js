@@ -13,7 +13,7 @@ $(document).ready(function () {
         { pname: "Product1", price: 2000 },
     ]
 
-    console.log(allItems[2].price);
+    //console.log(allItems[2].price);
 
     htmlOptionMin = '';
     for (let priceMin = 1000; priceMin <= 2000;) {
@@ -44,6 +44,8 @@ $(document).ready(function () {
 
     //console.log(htmlOptionMax);
     $("#max").html(htmlOptionMax);
+
+    
 
     let html = '';
 
