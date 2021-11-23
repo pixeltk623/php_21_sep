@@ -1,66 +1,107 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Notes App</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<title></title>
+	<link href="node_modules/nouislider/dist/nouislider.css" rel="stylesheet">
+	<script src="node_modules/nouislider/dist/nouislider.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<style type="text/css">
+		#slider {
+			width: 50%;
+			margin: auto;
+			margin-top: 50px;
+		}
+
+		#rangeSelection {
+			width: 50%;
+			margin: auto;
+			margin-top: 10px;
+		}
+	</style>
 </head>
 
 <body>
+	<div id="slider"></div>
+	<br>
+	<div id="rangeSelection">
+		<select id="min" style="width: 300px;"></select>
+		<select id="max" style="width: 300px;"></select>
+	</div>
+	<br><br>
+	<div id="myTable"></div>
+	<script type="text/javascript">
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Magic Notes</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-
-      </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" id="searchTxt" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
-    </div>
-  </nav>
+		function httpGet(theUrl) {
+			var xmlHttp = new XMLHttpRequest();
+			xmlHttp.open("GET", theUrl, false); // false for synchronous request
+			xmlHttp.send(null);
+			return xmlHttp.responseText;
+		}
 
 
-  <div class="container my-3">
-    <h1>Welcome To Magic Notes</h1>
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Add a note</h5>
-        <div class="form-group">
-          <textarea class="form-control" id="addTxt" rows="3"></textarea>
-        </div>
-        <button class="btn btn-primary" id="addBtn">Add Note</button>
-      </div>
-    </div>
-    <hr>
-    <h1>Your Notes</h1>
-    <hr>
-    <div id="notes" class="row container-fluid"> </div>
-  </div>
+		let minAndMaxRange = JSON.parse(httpGet("http://localhost/php_21_sep/nouislider/api.php"));
 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
-  <script src="js/app.js"></script>
+		// console.log(minAndMaxRange);
+
+		// console.log(minAndMaxRange.min_price);
+		// console.log(minAndMaxRange.max_price);
+
+		var slider = document.getElementById('slider');
+
+		console.log(slider);
+
+		noUiSlider.create(slider, {
+			start: [parseInt(minAndMaxRange.min_price), parseInt(minAndMaxRange.max_price)],
+			connect: true,
+			step: (parseInt(minAndMaxRange.max_price) - parseInt(minAndMaxRange.min_price)) / 6,
+			range: {
+				'min': parseInt(minAndMaxRange.min_price),
+				'max': parseInt(minAndMaxRange.max_price)
+			}
+		});
+
+
+		// console.log(noUiSlider);
+
+		$(document).ready(function () {
+			function OptionDropdown(value) {
+				htmlOptionValue = '';
+				for (let price = 1000; price <= 2000;) {
+
+					if (value == 'max') {
+						if (price == 2000) {
+							var selected = "selected";
+						} else {
+							selected = '';
+						}
+					}
+
+					htmlOptionValue += "<option value='" + price + "' " + selected + ">" + price + "</option>";
+
+					price = price + 200;
+				}
+
+
+				return htmlOptionValue;
+			}
+
+
+
+			$("#min").html(OptionDropdown("min"));
+			$("#max").html(OptionDropdown("max"));
+
+			slider.noUiSlider.on("change", function () {
+				let a1 = slider.noUiSlider.get();
+				console.log(a1[0]);
+			});
+
+		});
+
+		let tabe = amit;
+		let prem = `iam ${tabe}`;
+		console.log(prem);
+	</script>
 </body>
 
 </html>

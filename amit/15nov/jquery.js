@@ -128,10 +128,10 @@ $(document).ready(function () {
 
 
 
-        let maxPrice = priceSelected;
-        let minPrice = $("#min").val()
+        // let maxPrice = priceSelected;
+        // let minPrice = $("#min").val()
 
-        console.log(maxPrice, minPrice);
+        // console.log(maxPrice, minPrice);
 
 
     });
@@ -140,7 +140,7 @@ $(document).ready(function () {
         var priceSelected = $(this).val()
 
         console.log(priceSelected);
-        $("#range").val(priceSelected)
+        $("#range").val(priceSelected);
 
 
         htmlOptionMinChange = '';
