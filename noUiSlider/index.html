@@ -52,6 +52,7 @@
 		console.log(slider);
 
 		noUiSlider.create(slider, {
+<<<<<<< Updated upstream
 			start: [100, 2100],
 			connect: true,
 			step: 200,
@@ -60,6 +61,15 @@
 				'min': 100,
 				'max': 2100
 			}
+=======
+		    start: [parseInt(minAndMaxRange.min_price), parseInt(minAndMaxRange.max_price)],
+		    connect: true,
+		    step: 200,
+		    range: {
+		        'min': parseInt(minAndMaxRange.min_price),
+		        'max': parseInt(minAndMaxRange.max_price)
+		    }
+>>>>>>> Stashed changes
 		});
 
 
@@ -141,6 +151,7 @@
 				}
 				$("#min").html(htmlOptionMinChange);
 			});
+<<<<<<< Updated upstream
 
 			$(document).on("change", "#max", function () {
 				let priceSelected = $(this).val();
@@ -213,6 +224,8 @@
 				$("#myTable").html(html);
 			});
 	
+=======
+>>>>>>> Stashed changes
 		});
 	</script>
 </body>
