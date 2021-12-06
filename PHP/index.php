@@ -72,5 +72,6 @@ $lastName = "Kumar";
 	?>
 
 	<a href="<?php echo "new.php" ?>">New Page</a>
+
 </body>
 </html>

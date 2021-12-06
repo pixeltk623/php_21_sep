@@ -140,7 +140,7 @@
 		<form method="post">
 			<input type="text" name="fname" class="form-control <?php echo (isset($className)) ? $className : '' ?>">
 
-		<!-- 	<input type="text" name="fname" class="form-control <?php echo $className; ?>"> -->
+			<!-- <input type="text" name="fname" class="form-control <?php echo $className; ?>"> -->
 
 
 			<input type="submit" name="validate">
