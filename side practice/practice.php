@@ -1,10 +1,5 @@
 <?php
-
-$i = 5;
-do {
-    echo $i+1;
-    echo "<br>";
-    $i+=2;
-} while ($i < 10);
-
-?>
+$number = 9;
+$str = "Beijing";
+printf("There are %u million bicycles in %s.",$number,$str);
+?> 
