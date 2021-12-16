@@ -1,12 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-</head>
-<body>
-	<script src="practice.js"></script>
-</body>
-</html>
+mysql database 
+
+1 The REGEXP Operator
+SELECT *
+FROM customers
+WHERE last_name REGEXP 'Field'
+WHERE last_name REGEXP '^Field'
+WHERE last_name REGEXP 'Field$'
+WHERE last_name REGEXP 'Field|max|rose'
+WHERE last_name REGEXP '[gim]e'
+=> here it will find Field in last_name through REGEXP
+   ^ sign means last_name starts with field and $ sign means last_name ends with field.
+   | means or Operator
+   [gim] means character before e, it can be ge or ie or me and [] can be used after e
+   [a-h] means character are between a to h and [] can be used after e
+   
+2 
+
+
