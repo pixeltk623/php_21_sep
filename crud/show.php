@@ -1,24 +1,15 @@
 <?php 
     include_once 'config.php';
 
-    $query = "SELECT * FROM employees"; 
+    if (isset($_GET['id']) && !empty($_GET['id']) && is_numeric($_GET['id'])) { 
 
-    $result = mysqli_query($conn, $query);
+        $query = "SELECT * FROM employees WHERE id = ".$_GET['id']; 
 
-    //formatArray($result);
+        $result = mysqli_query($conn, $query);
 
-    //echo $result->num_rows;
+        $dataEmployee = mysqli_fetch_object($result);
 
-    // while ($response = mysqli_fetch_object($result)) {
-        
-    //     echo "<pre>";
-
-    //     print_r($response[1]);
-
-    // }
-
-    // die;
-
+    }
 ?>
 <!doctype html>
 <html lang="en">
@@ -29,56 +20,33 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-
     <title>Hello, world!</title>
   </head>
   <body>
      <div class="container mt-3">
         <h1 class="text-center text-primary">Crud In CORE PHP</h1>
-        <a href="create.php" class="btn btn-primary mb-3">Add New Employee</a>
+        <a href="index.php" class="btn btn-warning mb-3">Back To Home</a>
         <table class="table table-bordered">
-          <thead>
             <tr>
-              <th scope="col">#</th>
-              <th scope="col">Name</th>
-              <th scope="col">Email</th>
-              <th scope="col">Created At</th>
-              <th scope="col">Updated At</th>
-              <th scope="col">Action</th>
+                <th>Name</th>
+                <td><?php echo $dataEmployee->name; ?></td>
             </tr>
-          </thead>
-          <tbody>
-            <?php 
-
-                if($result->num_rows>0) {
-
-                    $sl = 1;
-                    while ($response = mysqli_fetch_object($result)) {
-                    ?>
-                    <tr>
-                        <td><?php echo $sl++; ?></td>
-                        <td><?php echo $response->name; ?></td>
-                        <td><?php echo $response->email; ?></td>
-                        <td><?php echo $response->created_at; ?></td>
-                        <td><?php echo $response->updated_at; ?></td>
-                        <td>
-                            <a href="show.php?id=<?php echo $response->id; ?>" class="btn btn-info">Show</a>
-                            <a href="edit.php?id=<?php echo $response->id; ?>" class="btn btn-warning">Edit</a>
-                            <a href="delete.php?id=<?php echo $response->id; ?>" class="btn btn-danger">Delete</a>
-                        </td>
-                    </tr>
-                    <?php
-                    }
-                } else {
-                    ?>
-                    <tr>
-                        <td colspan="5" class="text-center text-danger">No Record Found</td>
-                    </tr>
-                    <?php
-                }
-
-            ?>
-          </tbody>
+            <tr>
+                <th>Email</th>
+                <td><?php echo $dataEmployee->email; ?></td>
+            </tr>
+             <tr>
+                <th>City</th>
+                <td><?php echo $dataEmployee->city; ?></td>
+            </tr>
+            <tr>
+                <th>Created At</th>
+                <td><?php echo $dataEmployee->created_at; ?></td>
+            </tr>
+            <tr>
+                <th>Updated At</th>
+                <td><?php echo $dataEmployee->updated_at; ?></td>
+            </tr>
         </table>
     </div>
 
