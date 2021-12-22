@@ -35,6 +35,17 @@
                 <th>Email</th>
                 <td><?php echo $dataEmployee->email; ?></td>
             </tr>
+
+            <tr>
+                <th>Gender</th>
+                <td><?php echo $dataEmployee->gender; ?></td>
+            </tr>
+
+             <tr>
+                <th>Hobby</th>
+                <td><?php echo $dataEmployee->hobby; ?></td>
+            </tr>
+
              <tr>
                 <th>City</th>
                 <td><?php echo $dataEmployee->city; ?></td>

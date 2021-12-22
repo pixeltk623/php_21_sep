@@ -8,7 +8,11 @@
         $name = $_POST['name'];
         $email = $_POST['email'];
         $city = $_POST['city'];
-
+        if (isset($_POST['hobby'])) {
+            $hobby = implode(",", $_POST['hobby']);
+        } else {
+            $hobby = '';
+        }
         if (isset($_POST['gender'])) {
             $gender = $_POST['gender'];
         } else {
@@ -29,11 +33,14 @@
 
         if ($gender=='') {
            $e4 = '<small class="text-danger">Gender is not selected</small>';
-       }
+        }
+        if ($hobby=='') {
+           $e5 = '<small class="text-danger">Hobby is not selected</small>';
+        }
 
-        if (($name && $email && $city && $gender)!='') { 
+        if (($name && $email && $city && $gender && $hobby)!='') { 
 
-            $query = "UPDATE `employees` SET `name`='$name',`email`='$email', `gender` = '$gender', `city`='$city',`updated_at`='".date("Y-m-d H:i:s")."' WHERE id = ".$_GET['id'];
+            $query = "UPDATE `employees` SET `name`='$name',`email`='$email', `gender` = '$gender', `hobby` = '$hobby', `city`='$city',`updated_at`='".date("Y-m-d H:i:s")."' WHERE id = ".$_GET['id'];
 
             $result = mysqli_query($conn, $query);
 
@@ -51,11 +58,10 @@
     if (isset($_GET['id']) && !empty($_GET['id']) && is_numeric($_GET['id'])) { 
 
         $query = "SELECT * FROM employees WHERE id = ".$_GET['id']; 
-
         $result = mysqli_query($conn, $query);
-
         $dataEmployee = mysqli_fetch_object($result);
-
+        $dataEmployee->hobby = explode(',', $dataEmployee->hobby);
+       
     }
 ?>
 <!doctype html>
@@ -104,6 +110,21 @@
                 </div>
                 <?php 
                    echo (isset($e4)) ? $e4 : '';
+                ?>
+            </div>
+            <div class="form-group">
+                <label>Hobby</label>
+                <div class="form-check">
+                    <input type="checkbox" name="hobby[]" value="Cricket" class='form-check-input' <?php echo (in_array('Cricket', $dataEmployee->hobby)) ? 'checked' : '' ?>> Cricket
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" name="hobby[]" value="Football" class='form-check-input' <?php echo (in_array('Football', $dataEmployee->hobby)) ? 'checked' : '' ?>> Football
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" name="hobby[]" value="Baseball" class='form-check-input' <?php echo (in_array('Baseball', $dataEmployee->hobby)) ? 'checked' : '' ?>> Baseball
+                </div>
+                <?php 
+                   echo (isset($e5)) ? $e5 : '';
                 ?>
             </div>
             <div class="form-group">

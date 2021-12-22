@@ -4,9 +4,46 @@
     
     if (isset($_POST['submit'])) {
        
-       $name = $_POST['name'];
-       $email = $_POST['email'];
-       $city = $_POST['city'];
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $city = $_POST['city'];
+
+        $profilePic = $_FILES['profile_pic'];
+        $ext = strtolower(pathinfo($profilePic['name'], PATHINFO_EXTENSION));
+        $size = round($profilePic['size']/1024);
+        $isValid = false;
+
+        $fileName = '';
+        
+        if($profilePic['size']<1){
+            $fileE =  '<small class="text-danger">File is Not Selected</small>';
+        } else {
+
+            if (!(in_array($ext, ALLOW_EXT))) {
+                $fileE =  '<small class="text-danger">Not Allow</small>';
+            } else {
+                if ($size>=50 && $size<=250) {
+                    $isValid = true;
+
+                    $fileName = time().".".$ext;
+                } else {
+                    $fileE =  '<small class="text-danger">Size is not valid</small>';
+                }    
+            }
+        }
+
+
+       // move_uploaded_file($profilePic['tmp_name'], "uploads/".$profilePic['name']);
+       //move_uploaded_file(filename, destination)
+       // echo "<pre>";
+       // print_r($profilePic);
+       // die;
+
+       if (isset($_POST['hobby'])) {
+            $hobby = implode(",", $_POST['hobby']);
+       } else {
+            $hobby = '';
+       }
 
        if (isset($_POST['gender'])) {
             $gender = $_POST['gender'];
@@ -29,9 +66,13 @@
            $e4 = '<small class="text-danger">Gender is not selected</small>';
        }
 
-       if (($name && $email && $city && $gender)!='') {
-          
-            $query = "INSERT INTO `employees`(`name`, `email`, `gender`, `city`) VALUES ('$name','$email', '$gender', '$city')";
+       if ($hobby=='') {
+           $e5 = '<small class="text-danger">Hobby is not selected</small>';
+       }
+
+       if (($name && $email && $city && $gender && $hobby)!='' && $isValid==true) {
+            move_uploaded_file($profilePic['tmp_name'], "uploads/".$fileName);
+            $query = "INSERT INTO `employees`(`name`, `email`, `gender`, `hobby`, `city`, `file_name`) VALUES ('$name','$email', '$gender', '$hobby', '$city', '$fileName')";
 
             $result = mysqli_query($conn, $query);
 
@@ -60,16 +101,15 @@
     <title>Hello, world!</title>
   </head>
   <body>
-    <div class="container mt-3">
-        <h1 class="text-center text-primary">Crud In CORE PHP</h1>
-        <a href="index.php" class="btn btn-info mb-3">Home</a>
+    <div class="container mt-0">
+        <h1 class="text-center text-primary" style="font-size: 20px;">Crud In CORE PHP</h1>
+        <a href="index.php" class="btn btn-info mb-1">Home</a>
         <?php echo (isset($message)) ? $message : ''; ?>
-        <form method="post">
+        <form method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label>Name</label>
-                <input type="text" name="name" class="form-control">
+                <input type="text" name="name" class="form-control form-control-sm">
                 <?php
-
 
                     // echo $e1 = null ?? 'This is Test';
 
@@ -79,7 +119,7 @@
             </div>
             <div class="form-group">
                 <label>Email</label>
-                <input type="text" name="email" class="form-control">
+                <input type="text" name="email" class="form-control form-control-sm">
                 <?php 
                    echo (isset($e2)) ? $e2 : '';
                 ?>
@@ -99,8 +139,23 @@
             </div>
 
             <div class="form-group">
+                <label>Hobby</label>
+                <div class="form-check">
+                    <input type="checkbox" name="hobby[]" value="Cricket" class='form-check-input '> Cricket
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" name="hobby[]" value="Football" class='form-check-input '> Football
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" name="hobby[]" value="Baseball" class='form-check-input '> Baseball
+                </div>
+                <?php 
+                   echo (isset($e5)) ? $e5 : '';
+                ?>
+            </div>
+            <div class="form-group">
                 <label>City</label>
-                <select name="city" class="form-control">
+                <select name="city" class="form-control form-control-sm">
                     <option value="">Select</option>
                     <option value="Vadodara">Vadodara</option>
                     <option value="Surat">Surat</option>
@@ -110,6 +165,16 @@
                  <?php 
                    echo (isset($e3)) ? $e3 : '';
                 ?>
+            </div>
+
+            <div class="form-group">
+                <label>Profile Pic</label>
+                <input type="file" name="profile_pic" class="form-control-file form-control-sm">
+
+                <?php 
+                   echo (isset($fileE)) ? $fileE : '';
+                ?>
+
             </div>
             <input type="submit" name="submit" class="btn btn-primary">
         </form>
