@@ -69,6 +69,7 @@ $result = mysqli_query($conn, $query);
                 <a href="delete.php?id=<?php echo $response->id; ?>" class="btn btn-danger">Delete</a>
               </td>
             </tr>
+<<<<<<< HEAD
           <?php
           }
         } else {
@@ -84,6 +85,50 @@ $result = mysqli_query($conn, $query);
       </tbody>
     </table>
   </div>
+=======
+          </thead>
+          <tbody>
+            <?php 
+
+                if($result->num_rows>0) {
+
+                    $sl = 1;
+                    while ($response = mysqli_fetch_object($result)) {
+                    ?>
+                    <tr>
+                        <td><?php echo $sl++; ?></td>
+                        <td><?php echo $response->name; ?></td>
+                        <td><?php echo $response->email; ?></td>
+                        <td><?php echo $response->created_at; ?></td>
+                        <td><?php echo $response->updated_at; ?></td>
+                        <td>
+                            <a href="show.php?id=<?php echo $response->id; ?>" class="btn btn-info">Show</a>
+                            <a href="edit.php?id=<?php echo $response->id; ?>" class="btn btn-warning">Edit</a>
+                            <a href="delete.php?id=<?php echo $response->id; ?>" class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                    <?php
+                    }
+                } else {
+                    ?>
+                    <tr>
+                        <td colspan="5" class="text-center text-danger">No Record Found</td>
+                    </tr>
+                    <?php
+                }
+
+            ?>
+          </tbody>
+        </table>
+    </div>
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+>>>>>>> fca81f891d10233fe29e4ed81975d7c1194d7c9a
 
 
   <!-- Optional JavaScript; choose one of the two! -->
