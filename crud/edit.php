@@ -3,7 +3,6 @@
 
     date_default_timezone_set("Asia/Kolkata");
 
-    
 
     if (isset($_POST['submit'])) {
         $name = $_POST['name'];
