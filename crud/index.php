@@ -4,7 +4,7 @@ include_once 'config.php';
 $query = "SELECT * FROM employees";
 
 $result = mysqli_query($conn, $query);
-
+  
 //formatArray($result);
 
 //echo $result->num_rows;

@@ -6,7 +6,7 @@
         $query = "SELECT * FROM employees WHERE id = ".$_GET['id']; 
 
         $result = mysqli_query($conn, $query);
-
+        
         $dataEmployee = mysqli_fetch_object($result);
 
     }

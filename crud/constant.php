@@ -1,5 +1,5 @@
 <?php 
-	
+		
 	define('BASE_URL', 'http://localhost/php_21_sep/crud/');
 	define('SERVER_NAME', 'localhost');
 	define('USERNAME', 'root');
