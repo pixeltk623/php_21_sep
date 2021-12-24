@@ -9,6 +9,10 @@
         $city = $_POST['city'];
 
         $profilePic = $_FILES['profile_pic'];
+
+        echo "<pre>";
+        print_r($profilePic);
+        die;
         $ext = strtolower(pathinfo($profilePic['name'], PATHINFO_EXTENSION));
         $size = round($profilePic['size']/1024);
         $isValid = false;
