@@ -14,75 +14,32 @@
   </head>
   <body>
     <div class="container mt-0">
-        <h1 class="text-center text-primary" style="font-size: 20px;">Crud In CORE PHP</h1>
-        <a href="index.php" class="btn btn-info mb-1">Home</a>
+        <h1 class="text-center text-primary" style="font-size: 40px;">Crud In CORE PHP</h1>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+           Add New Employee
+        </button>
+        <div id="status" class="mt-3"></div>
+
+        <div id="result">
+            
+        </div>
         
-        <form method="post" enctype="multipart/form-data" id="uploadForm">
-            <div class="form-group">
-                <label>Name</label>
-                <input type="text" name="name" id="name" class="form-control form-control-sm">
-                
-            </div>
-            <div class="form-group">
-                <label>Email</label>
-                <input type="text" name="email" id="email" class="form-control form-control-sm">
-               
-            </div>
-
-            <div class="form-group">
-                <label>Gender</label>
-                <div class="form-check">
-                    <input type="radio" name="gender" value="Male" class='form-check-input'> Male
-                </div>
-                <div class="form-check">
-                    <input type="radio" name="gender" value="Female" class='form-check-input'> Female
-                </div>
-                
-            </div>
-
-            <div class="form-group">
-                <label>Hobby</label>
-                <div class="form-check">
-                    <input type="checkbox" name="hobby" value="Cricket" class='form-check-input '> Cricket
-                </div>
-                <div class="form-check">
-                    <input type="checkbox" name="hobby" value="Football" class='form-check-input '> Football
-                </div>
-                <div class="form-check">
-                    <input type="checkbox" name="hobby" value="Baseball" class='form-check-input '> Baseball
-                </div>
-            </div>
-            <div class="form-group">
-                <label>City</label>
-                <select name="city" id="city" class="form-control form-control-sm">
-                    <option value="">Select</option>
-                    <option value="Vadodara">Vadodara</option>
-                    <option value="Surat">Surat</option>
-                    <option value="Anand">Anand</option>  
-                    <option value="Bharuch">Bharuch</option>
-                </select>
-                 
-            </div>
-
-            <div class="form-group">
-                <label>Profile Pic</label>
-                <input type="file" name="profile_pic" id="profile_pic" class="form-control-file form-control-sm">
-
-               
-            </div>
-            <input type="submit" name="submit" class="btn btn-primary addUser">
-        </form>
+        <?php
+            include 'modal.php';
+        ?>
     </div>
 
     <script type="text/javascript">
         
         $(document).ready(function() {
+            getAllData();
             $("#uploadForm").on('submit', function(e){
 
 
                 event.preventDefault();
-                let NewDatat = new FormData(this)
-                console.log(NewDatat)
+
+                // let NewDatat = new FormData(this)
+                // console.log(NewDatat)
 
                 let username = $("#name").val();
                 let email = $("#email").val();
@@ -92,9 +49,16 @@
                 let city = $("#city").val()
                 let hobby = $("[name=hobby]");
 
-               // let profile_pic = $("#profile_pic");
-                var form_data = []; 
-                var file_data = $('#profile_pic').prop('files')[0];   
+                let profile_pic = $("#profile_pic");
+                //console.log(profile_pic.prop('files').length)
+
+                if(profile_pic.prop('files').length>0) {
+                    //
+                } else {
+                    console.log('File is Not selected')
+                }
+                // var form_data = []; 
+                // var file_data = $('#profile_pic').prop('files')[0];   
                                  
                 for(let i=0;i<gender.length; i++) {
                     if(gender[i].checked) {
@@ -108,24 +72,79 @@
                     }
                 }
 
-                let formAllData = {name: username, email : email, gender : genderValue,hobby : hobbyValue, city: city};
-                console.log(formAllData);
+                // let formAllData = {name: username, email : email, gender : genderValue,hobby : hobbyValue, city: city};
+                // console.log(formAllData);
                 // formAllData.push({file : file_data});
                 // console.log(formAllData);
                 
+
                     $.ajax({
                        type: 'POST',
-                        url: 'http://localhost/php_21_sep/ajax/insert.php',
+                        url: 'http://localhost/php_21_sep/ajax/api/insert.php',
                         data: new FormData(this),
                         contentType: false,
                         cache: false,
                         processData:false,
                         success: function(resp){ 
-                            console.log(resp);
+
+                            let status = JSON.parse(resp);
+
+                            console.log(status)
+
+                            if (status.status==true) {
+                                $("#status").html("<div class='alert alert-success'>"+status.message+"</div>");
+                            }
+
+                            $('#uploadForm').trigger("reset");
+                            $('#exampleModal').modal('hide');
+
+                        },
+
+                        error:function(e) {
+                            console.log(e)
                         }
-                });
+                    });
 
             });
+
+            function getAllData() {
+                $.ajax({
+                    type: 'GET',
+                    url: "http://localhost/php_21_sep/ajax/api/fetch.php",
+                    success:function(data){
+                    let finalData = JSON.parse(data);
+
+                    console.log(finalData);
+                    let table = '';
+                    table += '<table class="table">';
+                    table += '  <thead>';
+                    table += '    <tr>';
+                    table += '      <th scope="col">#</th>';
+                    table += '      <th scope="col">Name</th>';
+                    table += '      <th scope="col">Email</th>';
+                    table += '      <th scope="col">Gender</th>';
+                    table += '      <th>Action</th>';
+                    table += '    </tr>';
+                    table += '  </thead>';
+                    table += '  <tbody>';
+                    finalData.data.forEach(function(value, index){
+                        table += '    <tr>';
+                        table += '      <th scope="row">1</th>';
+                        table += '      <td>'+value.name+'</td>';
+                        table += '      <td>'+value.email+'</td>';
+                        table += '      <td>'+value.gender+'</td>';
+                        table += '      <td></td>';
+                        table += '    </tr>';           
+                    }); 
+                    table +=   '</tbody>';
+                    table += '</table>';
+                    console.log(table);
+                    $("#result").html(table);
+
+                    }
+                });
+            }
+
         });
 
     </script>
