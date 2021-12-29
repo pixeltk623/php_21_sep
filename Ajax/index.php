@@ -1,20 +1,18 @@
 <!doctype html>
 <html lang="en">
-
-<head>
+  <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
     <title>Hello, world!</title>
-</head>
-
-<body>
+  </head>
+  <body>
     <div class="container mt-0">
         <h1 class="text-center text-primary" style="font-size: 40px;">Crud In CORE PHP</h1>
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
@@ -32,6 +30,9 @@
     </div>
 
     <script type="text/javascript">
+        // 199.188.201.229
+        // ps*h,a4lbhCc
+        // sashqxlf
         $(document).ready(function() {
             getAllData();
             $("#uploadForm").on('submit', function(e){
@@ -47,7 +48,7 @@
                 let gender = $("[name=gender]");
                 let genderValue = "";
                 let hobbyValue = [];
-                let city = $("#city").val();
+                let city = $("#city").val()
                 let hobby = $("[name=hobby]");
 
                 let profile_pic = $("#profile_pic");
@@ -67,8 +68,8 @@
                     }
                 }
 
-                for (let i = 0; i < hobby.length; i++) {
-                    if (hobby[i].checked) {
+                for(let i=0;i<hobby.length; i++) {
+                    if(hobby[i].checked) {
                         hobbyValue.push(hobby[i].value);
                     }
                 }
@@ -115,44 +116,81 @@
                     success:function(data){
                     let finalData = JSON.parse(data);
 
-                    console.log(finalData);
+                    //console.log(finalData);
                     let table = '';
-                    table += '<table class="table">';
+                    table += '<table class="table table-bordered">';
                     table += '  <thead>';
                     table += '    <tr>';
                     table += '      <th scope="col">#</th>';
                     table += '      <th scope="col">Name</th>';
                     table += '      <th scope="col">Email</th>';
                     table += '      <th scope="col">Gender</th>';
+                    table += '      <th scope="col">Profile Pic</th>';
                     table += '      <th>Action</th>';
                     table += '    </tr>';
                     table += '  </thead>';
                     table += '  <tbody>';
                     finalData.data.forEach(function(value, index){
                         table += '    <tr>';
-                        table += '      <th scope="row">1</th>';
+                        table += '      <th scope="row">'+(++index)+'</th>';
                         table += '      <td>'+value.name+'</td>';
                         table += '      <td>'+value.email+'</td>';
                         table += '      <td>'+value.gender+'</td>';
-                        table += '      <td></td>';
+                        table += '      <td><img width="100" src="/php_21_sep/ajax/api/'+value.file_name+'" /></td>';
+                        table += '      <td>\
+                                        <button type="button" class="btn btn-info">Show</button>    \
+                                        <button type="button" class="btn btn-warning edit" value='+value.id+'>Edit</button>    \
+                                        <button type="button" class="btn btn-danger">Delete</button>    \
+                        </td>';
                         table += '    </tr>';           
                     }); 
                     table +=   '</tbody>';
                     table += '</table>';
-                    console.log(table);
+                   // console.log(table);
                     $("#result").html(table);
 
                     }
                 });
             }
 
+
+            $(document).on("click",".edit", function() {
+                let eid = $(this).val();
+                 $.ajax({
+                    type: 'GET',
+                    data : {eid: eid},
+                    datType: "text",
+                    url: "http://localhost/php_21_sep/ajax/api/single_data.php",
+                    success:function(data){
+                       let singleData = JSON.parse(data);
+                       let jsonData =  singleData.data;
+                        console.log(jsonData)
+                        // console.log(singleData.data.name)
+                        // $("#nameE").val(singleData.data.name)
+                       
+
+                        // $("#exampleModal").data('id', "5");
+
+                        // var a = $('#modalData').data('id'); //getter
+                        // console.log(a)
+                        //$('#modalData').data('id',20); //setter
+
+                         $("#exampleModal").modal('show');
+                         $("#exampleModal").find(".modal-title").html("Edit Employee");
+                         $("#exampleModal").find(".modal-body").html("<p>Hello Kumar</p>");
+                        // var myBookId = 8;
+                        // $(".modal-body").data("json", myBookId);
+                    }
+                });
+            });
         });
+
     </script>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
-    <!--   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
+  <!--   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
@@ -161,6 +199,5 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
     -->
-</body>
-
+  </body>
 </html>
