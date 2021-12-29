@@ -52,16 +52,6 @@
 		console.log(slider);
 
 		noUiSlider.create(slider, {
-<<<<<<< Updated upstream
-			start: [100, 2100],
-			connect: true,
-			step: 200,
-			// (parseInt(minAndMaxRange.max_price) - parseInt(minAndMaxRange.min_price)) / 6
-			range: {
-				'min': 100,
-				'max': 2100
-			}
-=======
 		    start: [parseInt(minAndMaxRange.min_price), parseInt(minAndMaxRange.max_price)],
 		    connect: true,
 		    step: 200,
@@ -69,7 +59,6 @@
 		        'min': parseInt(minAndMaxRange.min_price),
 		        'max': parseInt(minAndMaxRange.max_price)
 		    }
->>>>>>> Stashed changes
 		});
 
 
@@ -151,81 +140,6 @@
 				}
 				$("#min").html(htmlOptionMinChange);
 			});
-<<<<<<< Updated upstream
-
-			$(document).on("change", "#max", function () {
-				let priceSelected = $(this).val();
-				slider.noUiSlider.updateOptions({
-					start: [document.getElementById("min").value, priceSelected],
-					range: {
-						'min': 100,
-						'max': 2100
-					}
-				});
-				htmlOptionMinChange = '';
-				for (let priceMinChange = 100; priceMinChange < priceSelected;) {
-
-					htmlOptionMinChange += "<option value='" + priceMinChange + "'>" + priceMinChange + "</option>";
-
-					priceMinChange = priceMinChange + 200;
-				}
-				$("#min").html(htmlOptionMinChange);
-
-				let html = '';
-				html += "<table border='1' style='border-collapse: collapse;' width='100%'>";
-				html += "<tr>";
-				html += "<th>Name</th>";
-				html += "<th>Price</th>";
-				html += "</tr>";
-
-				for (var i = 0; i < allItems.length; i++) {
-					html += "<tr>";
-
-					if (allItems[i].price <= priceSelected) {
-						html += "<td>" + allItems[i].pname + "</td>";
-						html += "<td>" + allItems[i].price + "</td>";
-					}
-					html += "</tr>";
-				}
-				html += "</table>";
-
-				$("#myTable").html(html);
-
-			});
-
-			$(document).on("change", "#min", function () {
-				let priceSelected = $(this).val();
-				slider.noUiSlider.updateOptions({
-					start: [priceSelected, document.getElementById("max").value],
-					range: {
-						'min': 100,
-						'max': 2100
-					}
-				});
-
-				let html = '';
-				html += "<table border='1' style='border-collapse: collapse;' width='100%'>";
-				html += "<tr>";
-				html += "<th>Name</th>";
-				html += "<th>Price</th>";
-				html += "</tr>";
-
-				for (var i = 0; i < allItems.length; i++) {
-					html += "<tr>";
-
-					if (allItems[i].price >= priceSelected) {
-						html += "<td>" + allItems[i].pname + "</td>";
-						html += "<td>" + allItems[i].price + "</td>";
-					}
-					html += "</tr>";
-				}
-				html += "</table>";
-
-				$("#myTable").html(html);
-			});
-	
-=======
->>>>>>> Stashed changes
 		});
 	</script>
 </body>
