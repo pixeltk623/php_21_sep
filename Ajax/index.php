@@ -15,7 +15,7 @@
   <body>
     <div class="container mt-0">
         <h1 class="text-center text-primary" style="font-size: 40px;">Crud In CORE PHP</h1>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        <button type="button" class="btn btn-primary add">
            Add New Employee
         </button>
         <div id="status" class="mt-3"></div>
@@ -26,15 +26,20 @@
         
         <?php
             include 'modal.php';
+            include 'show.php';
+            include 'edit.php';
         ?>
     </div>
 
     <script type="text/javascript">
-        // 199.188.201.229
-        // ps*h,a4lbhCc
-        // sashqxlf
+
         $(document).ready(function() {
             getAllData();
+
+            $(document).on("click",".add", function() {
+                
+                $("#exampleModal").modal("show");
+            });
             $("#uploadForm").on('submit', function(e){
 
 
@@ -95,6 +100,7 @@
 
                             if (status.status==true) {
                                 $("#status").html("<div class='alert alert-success'>"+status.message+"</div>");
+                                getAllData();
                             }
 
                             $('#uploadForm').trigger("reset");
@@ -116,7 +122,7 @@
                     success:function(data){
                     let finalData = JSON.parse(data);
 
-                    //console.log(finalData);
+                    console.log(finalData);
                     let table = '';
                     table += '<table class="table table-bordered">';
                     table += '  <thead>';
@@ -130,20 +136,28 @@
                     table += '    </tr>';
                     table += '  </thead>';
                     table += '  <tbody>';
-                    finalData.data.forEach(function(value, index){
+
+                    if(finalData.data==null) {
                         table += '    <tr>';
-                        table += '      <th scope="row">'+(++index)+'</th>';
-                        table += '      <td>'+value.name+'</td>';
-                        table += '      <td>'+value.email+'</td>';
-                        table += '      <td>'+value.gender+'</td>';
-                        table += '      <td><img width="100" src="/php_21_sep/ajax/api/'+value.file_name+'" /></td>';
-                        table += '      <td>\
-                                        <button type="button" class="btn btn-info">Show</button>    \
-                                        <button type="button" class="btn btn-warning edit" value='+value.id+'>Edit</button>    \
-                                        <button type="button" class="btn btn-danger">Delete</button>    \
-                        </td>';
-                        table += '    </tr>';           
-                    }); 
+                            table += '<td colspan="5" class="text-center text-danger">'+finalData.message+'</td>';
+                        table += '    <tr>';
+                    } else {
+
+                        finalData.data.forEach(function(value, index){
+                            table += '    <tr>';
+                            table += '      <th scope="row">'+(++index)+'</th>';
+                            table += '      <td>'+value.name+'</td>';
+                            table += '      <td>'+value.email+'</td>';
+                            table += '      <td>'+value.gender+'</td>';
+                            table += '      <td><img width="100" src="/php_21_sep/ajax/api/'+value.file_name+'" /></td>';
+                            table += '      <td>\
+                                            <button type="button" class="btn btn-info show" value='+value.id+'>Show</button>    \
+                                            <button type="button" class="btn btn-warning edit" value='+value.id+'>Edit</button>    \
+                                            <button type="button" data-id='+value.file_name+' value='+value.id+' class="btn btn-danger delete">Delete</button>    \
+                            </td>';
+                            table += '    </tr>';           
+                        });
+                    } 
                     table +=   '</tbody>';
                     table += '</table>';
                    // console.log(table);
@@ -153,6 +167,18 @@
                 });
             }
 
+            // function getSingleDataById(id=null) {
+            //     $.ajax({
+            //         type: 'GET',
+            //         data : {Ckey: id},
+            //         datType: "text",
+            //         url: "http://localhost/php_21_sep/ajax/api/single_data.php",
+            //         success:function(data){
+            //            let singleData = JSON.parse(data);
+            //            let jsonData =  singleData.data;
+            //         }
+            //     });
+            // }
 
             $(document).on("click",".edit", function() {
                 let eid = $(this).val();
@@ -165,25 +191,122 @@
                        let singleData = JSON.parse(data);
                        let jsonData =  singleData.data;
                         console.log(jsonData)
-                        // console.log(singleData.data.name)
-                        // $("#nameE").val(singleData.data.name)
-                       
+                        let gender = $("[name=genderE]");
 
-                        // $("#exampleModal").data('id', "5");
+                        let hobby = $('input[name="hobbyE[]"]');
 
-                        // var a = $('#modalData').data('id'); //getter
-                        // console.log(a)
-                        //$('#modalData').data('id',20); //setter
 
-                         $("#exampleModal").modal('show');
-                         $("#exampleModal").find(".modal-title").html("Edit Employee");
-                         $("#exampleModal").find(".modal-body").html("<p>Hello Kumar</p>");
-                        // var myBookId = 8;
-                        // $(".modal-body").data("json", myBookId);
+                        $("#nameE").val(jsonData.name);
+                        $("#emailE").val(jsonData.email);
+
+                        for(let i=0;i<gender.length; i++) {
+                            if(gender[i].value==jsonData.gender) {
+                                gender[i].checked = true;
+                            }
+                        }
+
+                        let arrayHobby = jsonData.hobby.split(",");
+                        console.log(hobby);
+
+                        // fruits.includes("Mango");
+
+                        //console.log(jsonData.hobby.split(",").includes("Cricket"))
+
+                        for(let i=0;i<hobby.length; i++) {
+                            if(arrayHobby.includes(hobby[i].value)) {
+                                hobby[i].checked = true;
+
+                                //console.log(i)
+                            }  
+                            else {
+                                hobby[i].checked = false;
+                            }
+                        }
+
+                        let cityE = $("#cityE")[0].options;
+
+                        for(let i=0; i<cityE.length; i++) {
+
+                            if(cityE[i].value==jsonData.city) {
+                                cityE[i].selected= true;
+                            } else {
+                                cityE[i].selected= false;
+                            }
+                        }
+
+                        console.log(cityE)
+
+                        $("#exampleModalEdit").modal('show');
                     }
                 });
             });
+       
+        
+        $(document).on("click",".delete", function() {
+
+            let did = $(this).val();
+            let fileName = $(this).data('id');
+
+            $.ajax({
+                type: 'POST',
+                url: 'http://localhost/php_21_sep/ajax/api/delete.php',
+                data: {did: did, fileName: fileName},
+                datType: "text",
+                success: function(resp){ 
+
+                    if (true) {
+                        getAllData();
+                    }
+                    $("#status").html("<div class='alert alert-danger'>Employee Deleted</div>");
+                    console.log(resp);
+                }
+            });            
         });
+
+        $(document).on("click",".show", function() {
+            let sid = $(this).val();
+            $.ajax({
+                    type: 'GET',
+                    data : {eid: sid},
+                    datType: "text",
+                    url: "http://localhost/php_21_sep/ajax/api/single_data.php",
+                    success:function(data){
+                    let singleData = JSON.parse(data);
+                    let jsonData =  singleData.data;
+                    let table = '';
+                    table += '<table class="table table-bordered">';
+                    table += '<tr>';
+                        table += '<th>Name</th>';
+                        table += '<td>'+jsonData.name+'</td>';
+                    table += '</tr>';
+                    table += '<tr>';
+                        table += '<th>Email</th>';
+                        table += '<td>'+jsonData.email+'</td>';
+                    table += '</tr>';
+                    table += '<tr>';
+                        table += '<th>Gender</th>';
+                        table += '<td>'+jsonData.gender+'</td>';
+                    table += '</tr>';
+                    table += '<tr>';
+                        table += '<th>Hobby</th>';
+                        table += '<td>'+jsonData.hobby+'</td>';
+                    table += '</tr>';
+                    table += '<tr>';
+                        table += '<th>City</th>';
+                        table += '<td>'+jsonData.city+'</td>';
+                    table += '</tr>';
+                    table += '<tr>';
+                        table += '<th>Profile Pic</th>';
+                        table += '<td><img width="100" src="/php_21_sep/ajax/api/uploads/'+jsonData.file_name+'" /></td>';
+                    table += '</tr>';
+                    table += '<table>';
+                    $("#exampleModalShow").find('.modal-title').html("Employee: "+jsonData.name)
+                    $("#exampleModalShow").find('.modal-body').html(table)
+                    $("#exampleModalShow").modal('show');
+                    }
+                });
+        });
+    });
 
     </script>
 
