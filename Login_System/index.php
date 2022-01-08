@@ -2,10 +2,15 @@
 	session_start();
 	include 'config.php';
 
+
+	if (isset($_SESSION['is_login'])) {
+		header("Location: dashboard.php");
+	}
+
 	if (isset($_POST['submit'])) {
 
 		$emailOrUserName = $_POST['email'];
-		$password = $_POST['password'];
+		$password = md5($_POST['password']);
 
 		$query = "SELECT * FROM login WHERE (username = '$emailOrUserName' AND password = '$password') OR (email = '$emailOrUserName' AND password = '$password')";
 
@@ -14,7 +19,11 @@
 
 		if ($result->num_rows>0) {
 			
+			$user_id = mysqli_fetch_assoc($result)['id'];
+
 			$_SESSION['is_login'] = true;
+			$_SESSION['login_id'] = $user_id;
+			$_SESSION['time'] = time();
 			header("Location: dashboard.php");
 
 		} else {
