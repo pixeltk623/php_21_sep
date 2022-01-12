@@ -8,7 +8,7 @@
 		session_destroy();
 		header("Location: index.php");
 	} else {
-		$_SESSION['time'] = time();
+		$_SESSION['time'] = time(); 
 	}
 
 	if (isset($_SESSION['is_login'])) {
