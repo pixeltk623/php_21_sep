@@ -6,13 +6,14 @@ if (isset($_POST['submit'])) {
 
     $name = $_POST['name'];
     $email = $_POST['email'];
-    $city = $_POST['city'];
+    $city = $_POST['city']; 
 
     $profilePic = $_FILES['profile_pic'];
 
     echo "<pre>";
     print_r($profilePic);
-    die;
+    echo "</pre>";
+    
     $ext = strtolower(pathinfo($profilePic['name'], PATHINFO_EXTENSION));
     $size = round($profilePic['size'] / 1024);
     $isValid = false;

@@ -12,7 +12,6 @@
 
         $cat_name = $_POST['cat_name'];
 
-
         $query = "INSERT INTO `categories`(`name`) VALUES ('$cat_name')";
 
         $result = mysqli_query($conn, $query);
