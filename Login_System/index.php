@@ -22,7 +22,7 @@
 			$user_id = mysqli_fetch_assoc($result)['id'];
 
 			$_SESSION['is_login'] = true;
-
+			$_SESSION['login_id'] = $user_id;
 			$_SESSION['time'] = time();
 			header("Location: dashboard.php");
 

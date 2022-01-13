@@ -23,7 +23,7 @@
 		}
 
 		if (isset($userNameS) && isset($emailS)) {
-			$query = "INSERT INTO `login`(`name`, `username`, `email`, `password`) VALUES ('$name','$username','$email','$password')";
+			$query = "INSERT INTO `login`(`name`, `username`, `email`, `password`) VALUES ('$name','$username','$email','$password')";	
 
 			$result = mysqli_query($conn, $query);
 
@@ -78,7 +78,7 @@
 				if(re.test(email)) {
 					$.ajax({
 						type: "POST",
-						url: 'emailval.php',
+						url: 'emailval.php',		
 						data: {email : email},
 						dataType: "text",
 						success:function(data) {
