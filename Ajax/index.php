@@ -9,6 +9,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 
     <title>Hello, world!</title>
@@ -20,6 +21,9 @@
         <button type="button" class="btn btn-primary add">
             Add New Employee
         </button>
+
+        <button type="button" class="btn btn-primary sweet">Alert</button>
+
         <div id="status" class="mt-3"></div>
 
         <div id="result">
@@ -36,6 +40,20 @@
     <script type="text/javascript">
         $(document).ready(function() {
             getAllData();
+
+            $(document).on('click','.sweet', function() {
+
+               //swal("Here's the title!", "...and here's the text!");
+               // swal("Good job!", "You clicked the button!", "info");
+
+                swal({
+                  title: "Good job!",
+                  text: "You clicked the button!",
+                  icon: "success",
+                });
+
+
+            });
 
             $(document).on("click", ".add", function() {
 
@@ -99,7 +117,8 @@
                         console.log(status);
 
                         if (status.status == true) {
-                            $("#status").html("<div class='alert alert-success'>" + status.message + "</div>");
+                            // $("#status").html("<div class='alert alert-success'>" + status.message + "</div>");
+                            swal("Good job!", "Employee Added !", "success");
                             getAllData();
                         }
 
@@ -251,7 +270,17 @@
                 let did = $(this).val();
                 let fileName = $(this).data('id');
 
-                $.ajax({
+                swal({
+                  title: "Are you sure?",
+                  text: "Once deleted, you will not be able to recover this imaginary file!",
+                  icon: "warning",
+                  buttons: true,
+                  dangerMode: true,
+                })
+                .then((willDelete) => {
+                  if (willDelete) {
+
+                    $.ajax({
                     type: 'POST',
                     url: 'http://localhost/php_21_sep/ajax/api/delete.php',
                     data: {
@@ -264,10 +293,20 @@
                         if (true) {
                             getAllData();
                         }
-                        $("#status").html("<div class='alert alert-danger'>Employee Deleted</div>");
-                        console.log(resp);
+                        // $("#status").html("<div class='alert alert-danger'>Employee Deleted</div>");
+                        // console.log(resp);
                     }
                 });
+
+                    swal("Poof! Your imaginary file has been deleted!", {
+                      icon: "success",
+                    });
+                  } else {
+                    swal("Your imaginary file is safe!");
+                  }
+                });
+
+                
             });
 
             $(document).on("click", ".show", function() {
