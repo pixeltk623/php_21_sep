@@ -45,7 +45,7 @@
 		    </thead>
 		    <tbody>
 		        <?php
-         
+
 		        	foreach ($categories as $key => $value) {
 		        		?>
 		        		<tr>
@@ -56,6 +56,7 @@
 		        			<td><?php echo $value->updated_at; ?></td>
 		        			<td>
 		        				<a href="show?id=<?php echo $value->id; ?>" class="btn btn-primary">Show</a>
+		        				
 		        				<a href="edit?id=<?php echo $value->id; ?>" class="btn btn-info">Edit</a>
 		        				<a href="delete?id=<?php echo $value->id; ?>" class="btn btn-danger">Delete</a>
 		        			</td>

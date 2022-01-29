@@ -169,7 +169,7 @@
 	Class Model {
 
 		private $serverName = "localhost";
-		private $userName = "root";
+		private $userName = "root";	
 		private $password = "";
 		private $databaseName = "cepms";
 		public $conn;
