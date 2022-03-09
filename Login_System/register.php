@@ -73,7 +73,7 @@
 				let email = $(this).val();
 				const re =/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
-				console.log(re.test(email))
+				console.log(re.test(email)) 
 
 				if(re.test(email)) {
 					$.ajax({

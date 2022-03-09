@@ -41,15 +41,15 @@
         $(document).ready(function() {
             getAllData();
 
-            $(document).on('click','.sweet', function() {
+            $(document).on('click', '.sweet', function() {
 
-               //swal("Here's the title!", "...and here's the text!");
-               // swal("Good job!", "You clicked the button!", "info");
+                //swal("Here's the title!", "...and here's the text!");
+                // swal("Good job!", "You clicked the button!", "info");
 
                 swal({
-                  title: "Good job!",
-                  text: "You clicked the button!",
-                  icon: "success",
+                    title: "Good job!",
+                    text: "You clicked the button!",
+                    icon: "success",
                 });
 
 
@@ -71,7 +71,7 @@
                 let gender = $("[name=gender]");
                 let genderValue = "";
                 let hobbyValue = [];
-                let city = $("#city").val()
+                let city = $("#city").val();
                 let hobby = $("[name=hobby]");
 
                 let profile_pic = $("#profile_pic");
@@ -101,7 +101,7 @@
                 // console.log(formAllData);
                 // formAllData.push({file : file_data});
                 // console.log(formAllData);
-
+                
 
                 $.ajax({
                     type: 'POST',
@@ -202,7 +202,7 @@
             $(document).on("click", ".edit", function() {
                 let eid = $(this).val();
                 $.ajax({
-                    
+
                     type: 'GET',
                     data: {
                         eid: eid
@@ -271,42 +271,42 @@
                 let fileName = $(this).data('id');
 
                 swal({
-                  title: "Are you sure?",
-                  text: "Once deleted, you will not be able to recover this imaginary file!",
-                  icon: "warning",
-                  buttons: true,
-                  dangerMode: true,
-                })
-                .then((willDelete) => {
-                  if (willDelete) {
+                        title: "Are you sure?",
+                        text: "Once deleted, you will not be able to recover this imaginary file!",
+                        icon: "warning",
+                        buttons: true,
+                        dangerMode: true,
+                    })
+                    .then((willDelete) => {
+                        if (willDelete) {
 
-                    $.ajax({
-                    type: 'POST',
-                    url: 'http://localhost/php_21_sep/ajax/api/delete.php',
-                    data: {
-                        did: did,
-                        fileName: fileName
-                    },
-                    datType: "text",
-                    success: function(resp) {
+                            $.ajax({
+                                type: 'POST',
+                                url: 'http://localhost/php_21_sep/ajax/api/delete.php',
+                                data: {
+                                    did: did,
+                                    fileName: fileName
+                                },
+                                datType: "text",
+                                success: function(resp) {
 
-                        if (true) {
-                            getAllData();
+                                    if (true) {
+                                        getAllData();
+                                    }
+                                    // $("#status").html("<div class='alert alert-danger'>Employee Deleted</div>");
+                                    // console.log(resp);
+                                }
+                            });
+
+                            swal("Poof! Your imaginary file has been deleted!", {
+                                icon: "success",
+                            });
+                        } else {
+                            swal("Your imaginary file is safe!");
                         }
-                        // $("#status").html("<div class='alert alert-danger'>Employee Deleted</div>");
-                        // console.log(resp);
-                    }
-                });
-
-                    swal("Poof! Your imaginary file has been deleted!", {
-                      icon: "success",
                     });
-                  } else {
-                    swal("Your imaginary file is safe!");
-                  }
-                });
 
-                
+
             });
 
             $(document).on("click", ".show", function() {

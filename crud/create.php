@@ -6,10 +6,10 @@ if (isset($_POST['submit'])) {
 
     $name = $_POST['name'];
     $email = $_POST['email'];
-    $city = $_POST['city']; 
-
+    $city = $_POST['city'];
+    
     $profilePic = $_FILES['profile_pic'];
-
+    
     echo "<pre>";
     print_r($profilePic);
     echo "</pre>";
@@ -163,7 +163,7 @@ if (($name && $email && $city && $gender && $hobby) != '' && $isValid == true) {
                     <option value="Surat">Surat</option>
                     <option value="Anand">Anand</option>
                     <option value="Bharuch">Bharuch</option>
-                </select>
+                </select>     
                 <?php
                 echo (isset($e3)) ? $e3 : '';
                 ?>

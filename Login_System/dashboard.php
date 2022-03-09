@@ -11,7 +11,7 @@
 		$_SESSION['time'] = time(); 
 	}
 
-	if (isset($_SESSION['is_login'])) {    
+	if (isset($_SESSION['is_login'])) {
 		
 		$query = "SELECT * FROM `login` WHERE id = ".$_SESSION['login_id'];
 		$result = mysqli_query($conn, $query);

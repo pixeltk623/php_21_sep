@@ -1,10 +1,10 @@
-<?php 
-    
-    session_start();
-    include_once "../config.php";
-    if (!isset($_SESSION['is_login']) && !isset($_SESSION['admin_id'])) {
-        header("Location: index.php");
-    }
+<?php
+
+session_start();
+include_once "../config.php";
+if (!isset($_SESSION['is_login']) && !isset($_SESSION['admin_id'])) {
+    header("Location: index.php");
+}
 
 
 ?>
@@ -23,9 +23,7 @@
 
     <!-- Custom fonts for this template-->
     <link href="../../project1/BackEnd_Assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="../../project1/BackEnd_Assets/css/sb-admin-2.min.css" rel="stylesheet">
@@ -38,9 +36,9 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <?php 
+        <?php
 
-            include_once 'Includes/sidebar.php';
+        include_once 'Includes/sidebar.php';
 
         ?>
         <!-- End of Sidebar -->
@@ -52,9 +50,9 @@
             <div id="content">
 
                 <!-- Topbar -->
-                <?php 
+                <?php
 
-                    include_once 'Includes/navbar.php';
+                include_once 'Includes/navbar.php';
 
                 ?>
                 <!-- End of Topbar -->
@@ -65,62 +63,62 @@
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-                        
+
                     </div>
 
                     <!-- Content Row -->
                     <div class="row" style="display: block;">
 
-                    	<div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>Sr.No</th>
-                                            <th>Name</th>
-                                            <th>Created At</th>
-                                            <th>Updated At</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    
-                                    <tbody>
-                                    	<?php 
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                                <th>Sr.No</th>
+                                                <th>Name</th>
+                                                <th>Created At</th>
+                                                <th>Updated At</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
 
-                                    		$query = "SELECT * FROM `categories`";
+                                        <tbody>
+                                            <?php
 
-                                    		$result = mysqli_query($conn, $query);
-                                    		$srNo = 1;
-                                    		while ($response = mysqli_fetch_assoc($result)) {
-                                    			?>
-                                    				<tr>
-			                                            <td><?php echo $srNo++; ?></td>
-			                                            <td><?php echo $response['name']++; ?></td>
-			                                            <td><?php echo $response['created_at']++; ?></td>
-			                                            <td><?php echo $response['updated_at']++; ?></td>
-			                                            <td>
-			                                            	<a href="" class="btn btn-info">Edit</a>
-			                                            </td>
-			                                        </tr>
-                                    			<?php
-                                    		}
-                                    	?>
-                                        
-                                        
-                                    </tbody>
-                                </table>
+                                            $query = "SELECT * FROM `categories`";
+
+                                            $result = mysqli_query($conn, $query);
+                                            $srNo = 1;
+                                            while ($response = mysqli_fetch_assoc($result)) {
+                                            ?>
+                                                <tr>
+                                                    <td><?php echo $srNo++; ?></td>
+                                                    <td><?php echo $response['name']++; ?></td>
+                                                    <td><?php echo $response['created_at']++; ?></td>
+                                                    <td><?php echo $response['updated_at']++; ?></td>
+                                                    <td>
+                                                        <a href="" class="btn btn-info">Edit</a>
+                                                    </td>
+                                                </tr>
+                                            <?php
+                                            }
+                                            ?>
+
+
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
 
                     </div>
 
-                    
+
 
                 </div>
                 <!-- /.container-fluid -->
@@ -150,8 +148,7 @@
     </a>
 
     <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
